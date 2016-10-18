@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+    <title>Conversion Wars - Understanding</title>
+    <meta name="Description" content="Conversion Wars: Adaptation of Go-Fish Card Game for Fraction<->Decimal<->Percentage Conversions." />
+
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <link rel="stylesheet" href="css/slider.css" type="text/css" />
+    <link rel="stylesheet" href="css/calculator.css" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:700' rel='stylesheet' type='text/css'>
+
+    <link rel="icon" type="image/png" href="http://www.google.com/s2/favicons?domain=www.mansd.org">
+	<script src="js/jquery1_9_1.min.js" language="javascript" type="text/javascript"></script>
+    
+    <script>
+        var category = 'Conversion Wars';
+    </script>
+
+</head>
+<body>
+    <a name="play"></a>
+    <div id="wrapper">
+        <div id="page">
+
+
+          <div id="header">
+                 <div id="title">
+                      <h1>Conversion Wars</h1>
+                 </div>
+
+                <div id="menucontainer">
+                    <ul id="menu">
+                        <li><a title="Start a New Game Against the Computer" href="http://conversion-wars.me" target="_self">New Game</a></li>
+                        <li> | <a title="Objectives" href="#rules" class="rules-a">Objectives</a></li>
+                        <li> | <a title="Calculator" href="#calc" class="calc-a">Calculator</a></li>
+						<li> | <a title="Fraction Help" href="#tips" class="tips-a">Fraction Help</a></li>
+                        <li> | <a title="Check Understanding" href="understanding.html" target="_self" style="color:#333;">Applying Concepts</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="pagecontent">
+                <div id="board" class="board">
+                
+                
+                
+                    <h2>Solve The Following Equations</h2>
+                   
+                   <div>Don't forget proper notation such as precent symbol (%) and zeros in the one's place for decimals (0.00)!</div>
+                   
+                   <script type="text/javascript" language="javascript">
+				       function check_value(el,ans1,ans2){
+						   if(document.getElementById("_" + el).value !== ans1 && document.getElementById("_" + el).value != ans2) {
+							    alert('Try Again! The answer must be a simplified fraction or, for decimals, go to two decimal places.'); 
+								document.getElementById("_" + el).value = '';
+						   } 
+						   if(document.getElementById("_" + el).value == ans1 || (document.getElementById("_" + el).value != '' && document.getElementById("_" + el).value == ans1)) {
+							   	alert('You Got It! Good Job! :)'); 
+						   }
+					   }
+					   
+				   </script>
+                   <style>
+				       div.fr {padding-left:70px; padding-bottom:-5px;}
+				   </style>
+                    
+                        <h3 style="color:#333">Adding Fractions</h3>
+                        <div id="add" class="fr">
+                            <p>
+                                <ul>
+                                    <li>1/3 + 3/9 = <input type="text" size="3" id="_a11">
+                                    <input type="button" value=" submit fraction " id="a11" onClick="check_value(this.id,'2/3','')">
+                                    
+                                    ;&nbsp;&nbsp;&nbsp;<input type="text" size="3" id="_a12">
+                                    <input type="button" value=" submit decimal " id="a12" onClick="check_value(this.id,'0.67','.67')">
+                                    
+                                    ;&nbsp;&nbsp;&nbsp;<input type="text" size="3" id="_a13">
+                                    <input type="button" value=" submit percent " id="a13" onClick="check_value(this.id,'67%','67')">
+                                    </li>
+                                    <li>2/5 + 4/10 = <input type="text" size="3" id="_a21">
+                                    <input type="button" value=" submit fraction " id="a21" onClick="check_value(this.id,'4/5','')">
+                                    
+                                    ;&nbsp;&nbsp;&nbsp;<input type="text" size="3" id="_a22">
+                                    <input type="button" value=" submit decimal " id="a22" onClick="check_value(this.id,'0.80','.80')">
+                                    
+                                    ;&nbsp;&nbsp;&nbsp;<input type="text" size="3" id="_a23">
+                                    <input type="button" value=" submit percent " id="a23" onClick="check_value(this.id,'80%','80')">
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                        
+                        <h3 style="color:#333">Subtracting Fractions</h3>
+                        <div id="sub" class="fr">
+                            <p>
+                                <ul>
+                                    <li>4/8 - 2/6 = <input type="text" size="3" id="_s21">
+                                    <input type="button" value=" submit fraction " id="s21" onClick="check_value(this.id,'1/6,'')">
+                                    
+                                    ;&nbsp;&nbsp;&nbsp;<input type="text" size="3" id="_s12">
+                                    <input type="button" value=" submit decimal " id="s12" onClick="check_value(this.id,'0.17','.17')">
+                                    
+                                    ;&nbsp;&nbsp;&nbsp;<input type="text" size="3" id="_s13">
+                                    <input type="button" value=" submit percent " id="s13" onClick="check_value(this.id,'17%','17')">
+                                    </li>
+                                    <li>7/10 - 1/5 = <input type="text" size="3" id="_s21">
+                                    <input type="button" value=" submit fraction " id="s21" onClick="check_value(this.id,'1/5','')">
+                                    
+                                    ;&nbsp;&nbsp;&nbsp;<input type="text" size="3" id="_s22">
+                                    <input type="button" value=" submit decimal " id="s22" onClick="check_value(this.id,'0.20','.20')">
+                                    
+                                    ;&nbsp;&nbsp;&nbsp;<input type="text" size="3" id="_s23">
+                                    <input type="button" value=" submit percent " id="s23" onClick="check_value(this.id,'20%','20')">
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                        
+                        <h3 style="color:#333">Multiplying Fractions</h3>
+                        <div id="mul" class="fr">
+                            <p>
+                                <ul>
+                                    <li>1/5 * 2/3 = <input type="text" size="3" id="_m21">
+                                    <input type="button" value=" submit fraction " id="m21" onClick="check_value(this.id,'2/15,'')">
+                                    
+                                    ;&nbsp;&nbsp;&nbsp;<input type="text" size="3" id="_m12">
+                                    <input type="button" value=" submit decimal " id="m12" onClick="check_value(this.id,'0.13','.13')">
+                                    
+                                    ;&nbsp;&nbsp;&nbsp;<input type="text" size="3" id="_m13">
+                                    <input type="button" value=" submit percent " id="m13" onClick="check_value(this.id,'13%','13')">
+                                    </li>
+                                    <li>3/8 * 2/4 = <input type="text" size="3" id="_m21">
+                                    <input type="button" value=" submit fraction " id="m21" onClick="check_value(this.id,'3/16','')">
+                                    
+                                    ;&nbsp;&nbsp;&nbsp;<input type="text" size="3" id="_m22">
+                                    <input type="button" value=" submit decimal " id="m22" onClick="check_value(this.id,'0.19','.19')">
+                                    
+                                    ;&nbsp;&nbsp;&nbsp;<input type="text" size="3" id="_m23">
+                                    <input type="button" value=" submit percent " id="m23" onClick="check_value(this.id,'19%','19')">
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                        
+                        <h3 style="color:#333">Dividing Fractions</h3>
+                        <div id="div" class="fr">
+                            <p>
+                                <ul>
+                                    <li>2/4 / 1/6 = <input type="text" size="3" id="_d21">
+                                    <input type="button" value=" submit fraction " id="d21" onClick="check_value(this.id,'3','')">
+                                    
+                                    ;&nbsp;&nbsp;&nbsp;<input type="text" size="3" id="_d12">
+                                    <input type="button" value=" submit decimal " id="d12" onClick="check_value(this.id,'3.00','')">
+                                    
+                                    ;&nbsp;&nbsp;&nbsp;<input type="text" size="3" id="_d13">
+                                    <input type="button" value=" submit percent " id="d13" onClick="check_value(this.id,'300%','')">
+                                    </li>
+                                    <li>1/5 / 2/6 = <input type="text" size="3" id="_d21">
+                                    <input type="button" value=" submit fraction " id="d21" onClick="check_value(this.id,'3/5','')">
+                                    
+                                    ;&nbsp;&nbsp;&nbsp;<input type="text" size="3" id="_d22">
+                                    <input type="button" value=" submit decimal " id="d22" onClick="check_value(this.id,'0.60','.60')">
+                                    
+                                    ;&nbsp;&nbsp;&nbsp;<input type="text" size="3" id="_d23">
+                                    <input type="button" value=" submit percent " id="d23" onClick="check_value(this.id,'60%','60')">
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+
+                          </div>
+                          <div style="clear:both;"></div>
+                      </div>
+
+                <a name="rules"></a>
+                <div id="rules">
+
+	<div class="cd-panel from-right">
+		<header class="cd-panel-header">
+			<!--<h1>Title Goes Here</h1>-->
+			<a href="#0" class="cd-panel-close">Close</a>
+		</header>
+
+		<div class="cd-panel-container">
+			<div class="cd-panel-content">
+        <div id="rules">
+              <h2>Objectives</h2>
+              <p>In this game of Conversion Wars you will play against opponents to solve mathematical problems and become familiar with decimals, percentages, and fractions. In order to get a match all four conversions must be collected in order to recieve the points. The player with the most matches by the end of the game is the winner.</p>
+    
+              <h2>Drawing New Cards</h2>
+              <p>If a card is drawn and used, that player must pick up a new card from the scattered pile in the center of the screen. If there are three or four players then it is possible for any players to finish their cards and there are no cards left in the pile for them to draw. In that case they are out of the game and will simply have to wait while the remaining players finish the game.</p>
+    
+              <h2>New Hampshire Common Core Standards</h2>
+            <ul>
+                <li> Understand decimal notation for fractions, and compare decimal fractions.</li>
+                <li> Use equivalent fractions as a strategy to add and subtract fractions.</li>
+                <li> Apply and extend previous understandings of multiplication and division to multiply and divide fractions.</li>
+            </ul>
+        </div>
+                    
+                    
+    	</div> <!-- cd-panel-content -->
+		</div> <!-- cd-panel-container -->
+	</div> <!-- cd-panel -->
+
+  <div class="cd-panel-calc from-left">
+    <header class="cd-panel-header-calc">
+      <!--<h1>Title Goes Here</h1>-->
+      <a href="#0" class="cd-panel-close">Close</a>
+    </header>
+
+                    <div class="cd-panel-container-calc">
+                      <div class="cd-panel-content">
+                        <div id="calculator">
+                            <!-- Screen and clear key -->
+                            <div class="top">
+                                <span class="clear">C</span>
+                                <div class="screen"></div>
+                            </div>
+                            
+                            <div class="keys">
+                                <!-- operators and other keys -->
+                                <span>7</span>
+                                <span>8</span>
+                                <span>9</span>
+                                <span class="operator">+</span>
+                                <span>4</span>
+                                <span>5</span>
+                                <span>6</span>
+                                <span class="operator">-</span>
+                                <span>1</span>
+                                <span>2</span>
+                                <span>3</span>
+                                <span class="operator">÷</span>
+                                <span>0</span>
+                                <span>.</span>
+                                <span class="eval">=</span>
+                                <span class="operator">x</span>
+                            </div>
+                
+                      </div> <!-- cd-panel-content -->
+                    </div> <!-- cd-panel-container -->
+                  </div> <!-- cd-panel-calc -->
+
+                    <p><a href="#play" class="playlink">Back to game</a></p>
+                </div>
+            </div>
+
+<!-- -->
+
+<div class="cd-panel-tips from-right">
+	<header class="cd-panel-header">
+		<!--<h1>Title Goes Here</h1>-->
+		<a href="#0" class="cd-panel-close">Close</a>
+	</header>
+
+	<div class="cd-panel-container">
+		<div class="cd-panel-content">
+			<h1>Fraction Help</h1>
+			<h2>Adding Fractions</h2>
+			<p>Step 1: Make sure the bottom numbers (the denominators) are the same
+			<br />Step 2: Add the top numbers (the numerators) and put the answer
+			over the denominator<br />Step 3: Simplify the fraction</p>
+			<h2>Subtracting Fractions</h2>
+			<p>Step 1: Make sure the bottom number (the denominators) are the same<br />
+			Step 2: Subtract the top numbers from the (the numerators) and put the
+			answer over the denominator<br />
+			Step 3: Simplify the fraction</p>
+			<h2>Multiplying Fractions</h2>
+			<p>Step 1: Multiply the top numbers (the numerators)<br />Step 2: Multiply
+			 the bottom numbers (the numerators)<br />Step 3: Simplify the fraction</p>
+			<h2>Dividing Fractions</h2>
+			<p>Step 1: Turn the second fraction (the one you want to divide by) upside
+		  down (this is now a reciprocal)<br />Step 2: Multiply the first fraction
+			by that reciprocal<br />Step 3: Simplify the fraction</p>
+
+		</div> <!-- cd-panel-content -->
+	</div> <!-- cd-panel-container -->
+</div> <!-- cd-panel -->
+    
+<!--<script src="js/main.js"></script>-->
+<script src="js/slider.js"></script>
+<script src="js/calculator.js"></script>
+<!--<script src="js/jquery-2.1.1.js"></script>--> <!-- From slider, not used now -->
+
+
+</body>
+</html>
+
