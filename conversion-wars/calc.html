@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Simple Calculator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -93,8 +92,8 @@
 </head>
 
 <body>
-  <FORM name="Keypad" action="">
-    <input name="ReadOut" id="output" type="Text" size=24 value="0" readonly>
+  <form name="Keypad" action="">
+    <input name="ReadOut" id="output" type="Text" size="24" value="0" readonly="readonly">
     <table>
       <tr>
         <td>
@@ -149,9 +148,9 @@
     <input id="btndecimal" type="Button" value="   .  " onclick="Decimal()">
     <input id="btndivide" type="Button" value="   /   " onclick="Operation('/')">
     <input id="about" type="Button" value="About" onclick="myFunction()">
-    </br>
+    <br />
     <input id="btnequals" type="Button" value="  =  " onclick="Operation('=')">
-  </FORM>
+  </form>
   <script>
     var FKeyPad = document.Keypad;
     var Accumulate = 0;
@@ -220,8 +219,7 @@
     function Percent() {
       FKeyPad.ReadOut.value = (parseFloat(FKeyPad.ReadOut.value) / 100) * parseFloat(Accumulate);
     }
-  </script>
-  <script>
+	
     function myFunction() {
       alert("TegTech 2014");
     }
