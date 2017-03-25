@@ -4,6 +4,9 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Vadim Manokhin - Resume</title>
+    
+    <link rel="manifest" href="manifest.json">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <meta name="description" content="Vadim Manokhin - Full Stack Engineer - Resume">
@@ -35,6 +38,7 @@
 		dt span{color:#070}
 		dl{margin-bottom:15px}
 		dd{margin-top:3px;margin-left:30px}
+		dt.projects{border:none;font-style:italic}
 		@media (max-width: 780px) {
 			body{margin:5px}
 			ul{padding-left:15px}
@@ -49,26 +53,26 @@
     <p>manokhin.vadim [at] gmail.com</p>
     <p><a href="manokhin_resume.pdf">PDF</a></p>
     <h2>Summary</h2>
-    <p>I am an Application Developer with extensive experience working as a Full Stack developer, QA and UI/UX engineer, systems administrator. Current career goals and objectives include minimizing costs and maximizing performance of software solutions, continuously learning new technologies to overcome challenges and improve operational efficiency, and empowering and leading effective teams of engineers. I am interested in finance, markets, investments, high frequency trading, and PWM.</p>
+    <p>I am a Full Stack Application Developer with experience working as a UI, UX, and QA engineer, systems administrator. Current career goals and objectives include designing and implementing enterprise-scale systems, minimizing costs and maximizing performance of software solutions, improving operational efficiency of organizations, learning new technologies to overcome business challenges, empowering and leading effective teams of engineers. I am also interested in analytics, finance, and investing.</p>
     
     <h2 id="xp">Skills &amp; Experience</h2>
     <ul>
-        <li>Full-stack application development using Adobe ColdFusion/Fusebox, PHP/Drupal, C#/.NET, JavaScript and CSS along with their popular frameworks/libraries in production systems to serve enterprise customers while handling an increasing growth of requests, users, and functionalities;</li>
+        <li>Full stack application development using ACF/Fusebox, PHP/Drupal, C#/.NET, JS and CSS along with their popular frameworks/libraries in production systems to serve enterprise customers while handling an increasing growth of requests, users, and functionalities;</li>
         <li>Working in results-oriented teams that employ continuous integration and various development methodologies;</li>
         <li>Building complex interactive cross-browser web applications w/ and w/o JS frameworks;</li>
         <li>Creating enterprise-scale SOAP and RESTful web-services that expose/consume API with XML and JSON serialization;</li>
         <li>Preparing systems to satisfy PCI compliance requirements;</li>
-        <li>Extensively using t-SQL (MSSQL) for prototypes and production applications;</li>
-        <li>Learning about and teaching new and existing skills and technologies, including: Workday, Informatica, Salesforce, Drupal, Mendix, Neoload, Laserfiche, JIRA, Confluence, and others;</li>
+        <li>Extensively using t-SQL (MS SQL Server) for prototypes and production applications;</li>
+        <li>Learning about and teaching new and existing skills and technologies, including: Workday, Informatica, Salesforce.com (Sales/HEDA cloud), Drupal, Mendix, Neoload, Laserfiche, JIRA, Confluence, and others;</li>
         <li>Configuring and administering applications such as JIRA, Confluence, and others;</li>
         <li>Integrating with popular web services API (Google APIs, Amazon Web Services, etc);</li>
     </ul>
     
     <h2>Technical Skills Breakdown</h2>
     <ul>
-    	<li>Advanced knowledge of ACF, t-SQL, JS, CSS, XML/HTML, PHP, ETL tools (Informatica), JIRA and Confluence administration and others.</li>
-        <li>Intermediate knowledge of C/C#, .NET, Java, Drupal, SOAP and RESTful webservices, Salesforce (developer, admin), Workday, git.</li>
-        <li>Familiarity with most flavors of shell scripting, Assembly (MASM), Python, Perl, Objective C/Swift, Selenium, CrazyEgg, Mendix, Neoload, Laserfiche, webRTC, MEAN stack.</li>
+    	<li><u>Advanced</u> knowledge of ACF, t-SQL, JS, CSS, XML/HTML, ETL tools (Informatica, SSIS), SOAP and RESTful web services, JIRA, Confluence.</li>
+        <li><u>Intermediate</u> knowledge of C/C#, .NET, Java, PHP, Drupal, Salesforce.com/SOQL/APEX/Visualforce, Workbench, SharePoint, Workday, VSS, git.</li>
+        <li><u>Familiarity</u> with most flavors of shell scripting, Assembly (MASM), Python, Perl, Objective C/Swift, Selenium, CrazyEgg, Mendix, Neoload, Laserfiche, webRTC, MEAN stack.</li>
     </ul>
     
     <h2 id="empl">Employment</h2>
@@ -76,28 +80,38 @@
     <ul>
         <li><strong>Babson College, Babson Park, MA</strong><br />
             <dl>
-                <dt>Application Developer I, <span>Apr/2014 - Present</span></dt>
-                <dd>- Designing and developing dynamic web applications for Babson Portal in Adobe ColdFusion using Fusebox (an MVC framework for ACF / PHP), MSSQL Server, JS, CSS, and HTML/XML;</dd>
-                <dd>- Working on development of new Babson Student Portal in ACF and PHP using Drupal;</dd>
-                <dd>- Developing integration solutions for a variety of systems and applications using SOAP and RESTful web services, APIs, ETL, and MSSQL Server;</dd>
-                <dd>- Researching, proposing, and integrating new software solutions into the Babson platform.</dd>
+                <dt>Application Developer, <span>Apr 2014 - Present</span></dt>
+                <dd>- Design, develop, and support complex dynamic cross-browser web applications using ACF/Fusebox, Java, PHP/Drupal, C#/.NET, JS/CSS along with their popular frameworks/libraries in production systems to serve enterprise customers while handling an increasing growth of requests, users, and functionalities;</dd>
+                <dd>- Create enterprise-scale integration solutions for a variety of systems using SOAP and RESTful web services, APIs, ETL tools, MS SQL Server;</dd>
+                <dd>- Work with, use, and help configure Salesforce.com (Sales/HEDA cloud), Informatica, Workday, JIRA, SharePoint, Neoload and other technologies.</dd>
                 
-                <dt>Application Developer Intern, <span>May/2012 - Apr/2014</span></dt>
-                <dd>- Writing scripts in Apache JellyScript and XML to automate services in JIRA;</dd>
-                <dd>- Writing REST compatible plugins and standalone gadgets for JIRA using Google Gadget API, JavaScript, CSS, HTML, OAuth and Maven, with JSON and XML feeds;</dd>
-                <dd>- Creating unit tests using Selenium and JUnit to validate services for a variety of systems.</dd>
+                <dt class="projects">Recent projects:</dt>
+                <dd>- Designing and implementing a cutting edge SFDC alumni engagement platform that will serve a community of over 50,000 Babson alumni around the world;</dd>
+                <dd>- Redesigning of the <a href="http://bab.sn/givenow">Babson online giving form</a> into a single-page web app, resulting in an improved UX which increased number of donations - one of the primary sources of income for the college;</dd>
             </dl>
         </li>
-        
+        <li><strong>Babson College, Babson Park, MA</strong><br />
+        	<dl>
+                <dt>Software Developer Co-op / Application Developer Intern, <span>May 2012 - Apr 2014</span></dt>
+                <dd>- Created and maintained dynamic web applications for the Babson Portal - a platform of over 150 custom written tools with 2,000,000+ lines of code; researched, proposed, and integrated new software solutions;</dd>
+                <dd>- Wrote custom two-way web services and data feeds to integrate internal data stores and systems with a variety of third party applications and tools;</dd>
+                <dd>- Developed custom system workflows (XML), services, and events (JellyScript) in JIRA, performed system administration of the Atlassian stack (JIRA, Confluence) including data back-up, indexing, and restoring, system troubleshooting, patching, etc.</dd>
+                
+                <dt class="projects"><i>Projects included:</i></dt>
+                <dd>- Developing a single page web app that streamlined the annual faculty reporting of student opinion surveys, significantly reducing time and paper required to create the reports;</dd>
+                <dd>- Automating the semiannual e-mail send-out of personalized print statistics as part of a print awareness campaign, increasing efficient printing practices and awareness of sustainability initiatives, resulting in several thousand dollars of reduced costs.</dd>
+            </dl>
+        </li>
+        <!--
         <li><strong>The Web, Inc., Tyumen, Russia</strong>
             <dl>
-                <dt>System Administrator, Printing Station Operator (Part Time), <span>May/2008 - May/2010</span></dt>
+                <dt>System Administrator, Printing Station Operator (Part Time), <span>May/2009 - May/2010</span></dt>
                 <dd>- Managed a small sales database (Microsoft Access);</dd>
                 <dd>- Developed and supported company's website (HTML, CSS, JS);</dd>
                 <dd>- Learned about Internet technologies and web standards.</dd>
             </dl>
         </li>
-    
+    	-->
     </ul>
     
     
@@ -106,15 +120,14 @@
     <ul>
     	<li><strong>Babson College, Babson Park, MA</strong>
             <dl>
-                <dt>Masters of Science in Business Administration (GPA: 3.87) <span>May/2016 - present</span></dt>
-                <dd>- Business Analytics concentration;</dd>
-                <dd>- Finance concentration, Investments track</dd>
+                <dt>Masters of Science in Business Administration (GPA: 3.87) <span>May 2016 - present</span></dt>
+                <dd>- Business Analytics and Finance concentrations, Investments track</dd>
             </dl>
         </li>
         
     	<li><strong>Wentworth Institute of Technology, Boston, MA</strong>
             <dl>
-                <dt>Bachelor of Science in Computer Science and Applied Math minor (GPA: 3.82) <span>Sep/2011 - <a href="https://www.wit.edu/news/slices-commencement">Apr/2014</a></span></dt>
+                <dt>Bachelor of Science in Computer Science, Applied Math minor (GPA: 3.82) <span>Sep 2011 - <a href="https://www.wit.edu/news/slices-commencement">Apr 2014</a></span></dt>
                 <dd>- Dean's List (2011-2014); Graduated with honors: <i>magna cum laude;</i></dd>
                 <dd>- Alternative Spring Break 2012 <a href="https://www.wit.edu/news/alternative-spring-break-2012">volunteer</a>;</dd>
                 <dd>- Wentworth Community Scholarship, Wentworth Merit Scholarship, and Wentworth Annual Award recipient; Tau Alpha Pi Honor Society member;</dd>
@@ -127,7 +140,7 @@
         
         <li><strong>University of Tyumen, Tyumen, Russia</strong>
             <dl>
-                <dt>Majored in Software Development and Computer Systems Administration (GPA: 3.6) <span>Sep/2008 - May/2011</span></dt>
+                <dt>Majored in Mathematical Software and Information Systems Administration <span>Sep 2008 - May 2011</span></dt>
                 <dd>- 2008 Outstanding Incoming Class Award Recipient, Institute of Mathematics and Computer Science;</dd>
                 <dd>- Full Tuition Scholarship.</dd>
             </dl>
@@ -140,23 +153,24 @@
         <li>Conferences, workshops, and seminars I've attended
             <dl>
                 <dt></dt>
-                <dd>- <a href="https://www.eventbrite.com/e/31879507465">Progressive Web Apps @ Akamai</a>, March 2017 (Cambridge, MA);</dd>
-                <dd>- <a href="https://www.hackerx.org">HackerX Boston (Front-End) @ Chewey</a>, March 2017 (Boston, MA);</dd>
-                <dd>- <a href="https://www.realityvirtuallyhack.com/">Reality VR Hack 2016 @ MIT</a>, October 2016 (Cambridge, MA);</dd>
-                <dd>- <a href="https://developer.att.com/blog/boston-hackathon-winners-mobile-solutions">AT&T Mobile App Hackathon 2016 @ Workbar</a>, August 2016 (Boston, MA);</dd>
+                <dd>- <a href="http://hackwit.us">HackWITus 2-day Hackathon @ Wentworth Institute of Technology</a>, Mar 2017 (Boston, MA)</dd>
+                <dd>- <a href="https://www.eventbrite.com/e/31879507465">Progressive Web Apps @ Akamai</a>, Mar 2017 (Cambridge, MA)</dd>
+                <dd>- <a href="https://www.hackerx.org">HackerX Boston (Front-End) @ Chewey</a>, Mar 2017 (Boston, MA)</dd>
+                <dd>- <a href="https://www.realityvirtuallyhack.com/">Reality VR Hack 2016 @ MIT</a>, Oct 2016 (Cambridge, MA)</dd>
+                <dd>- <a href="https://developer.att.com/blog/boston-hackathon-winners-mobile-solutions">AT&T Mobile App Hackathon 2016 @ Workbar</a>, Aug 2016 (Boston, MA)</dd>
                 <dd>- BCBSMA Design Thinking Bootcamp, July 2016 (Wellelsey, MA);</dd>
-                <dd>- <a href="https://developer.att.com/enhanced-webrtc">AT&amp;T WebRTC Boston Coding Workshop</a>, May 2016 (Boston, MA);</dd>
-                <dd>- <a href="https://scramblesystems.com/">Future of Wearables Scramble&trade; 2016 @ Babson</a>, April 2016 (Wellelsey, MA);</dd>
-                <dd>- <a href="https://www.bostoncodecamp.com">Boston Code Camp</a>, November 2015 (BosCC#24) / April 2016 (BosCC#25)(Cambridge, MA);</dd>
-                <dd>- <a href="https://www.salesforce.com/events/worldtour/boston/">Salesforce World Tour 2016 Boston</a>, April 2016 (Boston, MA);</dd>
-                <dd>- <a href="https://www.sierra-cedar.com/wp-content/uploads/sites/12/2015/11/Sierra-Cedar_Boston_Summit-Oct2015-Presentations.pdf">Workday Higher Education Summit</a>, October 2015 (Wellesley, MA);</dd>
-                <dd>- <a href="https://www.eventbrite.com/e/17531372808">Neotys North American User Conference</a>, October 2015 (Boston, MA);</dd>
-                <dd>- <a href="https://dyn.com/hackademy/">Dyn's Hackademy</a>, May 2015 (Manchester, NH) - <a href="./conversion-wars/">Conversion Wars Web App</a>;</dd>
-                <dd>- <a href="https://www.workday.com">Workday</a> workshop, April 2015 (Wellesley, MA);</dd>
-                <dd>- <a href="https://www.neotys.com/product/overview-neoload.html">NeoLoad</a> 3-day training, February 2015 (Waltham, MA);</dd>
-                <dd>- <a href="https://www.laserfiche.com">Laserfiche</a> 4-day onsite training, September 2014 (Wellesley, MA);</dd>
-                <dd>- <a href="https://www.mendix.com">Mendix</a> 3-day onsite training, August 2014 (Wellesley, MA);</dd>
-                <dd>- <a href="https://dyn.com/blog/students-gain-first-hand-tech-experience-at-dyns-hackademy-weekend/">Dyn's Hackademy</a>, May 2014 (Manchester, NH) - <a href="https://itunes.apple.com/us/app/dwc-friends/id981695591">DWC BoyScouts iOS App</a>;</dd>
+                <dd>- <a href="https://developer.att.com/enhanced-webrtc">AT&amp;T WebRTC Boston Coding Workshop</a>, May 2016 (Boston, MA)</dd>
+                <dd>- <a href="https://scramblesystems.com/">Future of Wearables Scramble&trade; 2016 @ Babson</a>, Apr 2016 (Wellelsey, MA)</dd>
+                <dd>- <a href="https://www.bostoncodecamp.com">Boston Code Camps 24 - 27</a>, Nov 2015, 2016 / Mar 2016, 2017 (Cambridge, MA)</dd>
+                <dd>- <a href="https://www.salesforce.com/events/worldtour/boston/">Salesforce World Tour 2016 Boston</a>, Apr 2016 (Boston, MA)</dd>
+                <dd>- <a href="https://www.sierra-cedar.com/wp-content/uploads/sites/12/2015/11/Sierra-Cedar_Boston_Summit-Oct2015-Presentations.pdf">Workday Higher Education Summit</a>, Oct 2015 (Wellesley, MA)</dd>
+                <dd>- <a href="https://www.eventbrite.com/e/17531372808">Neotys North American User Conference</a>, Oct 2015 (Boston, MA)</dd>
+                <dd>- <a href="https://dyn.com/hackademy/">Dyn's Hackademy</a>, May 2015 (Manchester, NH) - <a href="./conversion-wars/">Conversion Wars Web App</a></dd>
+                <dd>- <a href="https://www.workday.com">Workday</a> workshop, Apr 2015 (Wellesley, MA)</dd>
+                <dd>- <a href="https://www.neotys.com/product/overview-neoload.html">NeoLoad</a> 3-day training, Feb 2015 (Waltham, MA)</dd>
+                <dd>- <a href="https://www.laserfiche.com">Laserfiche</a> 4-day onsite training, Sep 2014 (Wellesley, MA)</dd>
+                <dd>- <a href="https://www.mendix.com">Mendix</a> 3-day onsite training, Aug 2014 (Wellesley, MA)</dd>
+                <dd>- <a href="https://dyn.com/blog/students-gain-first-hand-tech-experience-at-dyns-hackademy-weekend/">Dyn's Hackademy</a>, May 2014 (Manchester, NH) - <a href="https://itunes.apple.com/us/app/dwc-friends/id981695591">DWC BoyScouts iOS App</a></dd>
             </dl>
         </li>
         
@@ -164,7 +178,7 @@
             <dl>
                 <dt></dt>
                 <dd>- I've been a member of &Tau;&Alpha;&Pi; (<a href="http://taualphapi.org/">Tau Alpha Pi</a>, Massachusetts Alpha Chapter) - the professional honor society for engineering technology - since 2013.</dd>
-                <dd>- Occasionally, I participate in the local Boston technology meetups and user group activities such as <a href="http://bostonnewtech.org/">BNT</a> (Boston New Technology), <a href="http://aug.atlassian.com/cities/bostonma">Boston AUG</a> (Attlasian User Group), <a href="http://codeforboston.org/">Code for Boston</a> Hack Nights, and others.</dd>
+                <dd>- Occasionally, I participate in the local Boston technology meetups, hackathons, and user group activities such as <a href="http://bostonnewtech.org/">BNT</a> (Boston New Technology), <a href="http://aug.atlassian.com/cities/bostonma">Boston AUG</a> (Atlassian User Group), <a href="http://codeforboston.org/">Code for Boston</a> Hack Nights, and others.</dd>
                 <dd>- Outside of my day to day duties as a developer I enjoy cycling, creating and playing music, learning new things, and generally expanding my horizons.</dd>
             </dl>
         </li>
