@@ -1,110 +1,56 @@
 <!DOCTYPE html>
+<!-- By Ada Rose Edwards @lady_ada_king. -->
 <html>
   <head>
     <meta charset="utf-8">
-    <title>VR Img Gallery</title>
-    <meta name="description" content="360&deg; Image Gallery - A-Frame">
-    <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
-    <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
-    <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
-    <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
-    <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
-    <script>
-		// Component that listens to an event, fades out an entity, swaps the texture, and fades it back in.
-		AFRAME.registerComponent('set-image', {
-			schema: {
-				on: {type: 'string'},
-				target: {type: 'selector'},
-				src: {type: 'string'},
-				dur: {type: 'number', default: 300}
-			},
-	
-			init: function () {
-				var data = this.data;
-				var el = this.el;
-				
-				this.setupFadeAnimation();
-				
-				el.addEventListener(data.on, function () {
-					// Fade out image.
-					data.target.emit('set-image-fade');
-					// Wait for fade to complete.
-					setTimeout(function () {
-						// Set image.
-						data.target.setAttribute('material', 'src', data.src);
-					}, data.dur);
-				});
-			},
-	
-			// Setup fade-in + fade-out.
-			setupFadeAnimation: function () {
-				var data = this.data;
-				var targetEl = this.data.target;
-				
-				// Only set up once.
-				if (targetEl.dataset.setImageFadeSetup) return;
-				targetEl.dataset.setImageFadeSetup = true;
-				
-				// Create animation.
-				targetEl.setAttribute('animation__fade', {
-					property: 'material.color',
-					startEvents: 'set-image-fade',
-					dir: 'alternate',
-					dur: data.dur,
-					from: '#FFF',
-					to: '#000'
-				});
-			}
-		});
-	</script>
-</head>
-<body>
+    <meta name="viewport" content="width=device-width">
+    <title>HackWITus</title>
+    <meta name="description" content="HackWITus">
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="build.js"></script>
+  </head>
+  <body>
     <a-scene>
-        <a-assets>
-            <img id="city" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg" />
-            <img id="city-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg" />
-            <img id="cubes-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-cubes.jpg" />
-            <img id="sechelt-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg" />
-            <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
-            <img id="cubes" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg" />
-            <img id="sechelt" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg" />
-            
-            <!-- Image link template to be reused. -->
-            <script id="link" type="text/html">
-                <a-entity class="link"
-                    geometry="primitive: plane; height: 1; width: 1"
-                    material="shader: flat; src: ${thumb}"
-                    event-set__1="_event: mousedown; scale: 1 1 1"
-                    event-set__2="_event: mouseup; scale: 1.2 1.2 1"
-                    event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
-                    event-set__4="_event: mouseleave; scale: 1 1 1"
-                    set-image="on: click; target: #image-360; src: ${src}"
-                    sound="on: click; src: #click-sound"
-                ></a-entity>
-            </script>
-        </a-assets>
+      <a-assets>
+        <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
+        <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous">
+        <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous">
+        <img id="sky" src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg" crossorigin="anonymous" />
+        <a-asset-item id="dawningFont" src="https://raw.githubusercontent.com/ngokevin/kframe/master/components/text-geometry/examples/vaporwave/fonts/dawningOfANewDayRegular.typeface.json"></a-asset-item>
+        <a-asset-item id="exoFont" src="https://raw.githubusercontent.com/ngokevin/kframe/master/components/text-geometry/examples/vaporwave/fonts/exo2Black.typeface.json"></a-asset-item>
+        <a-asset-item id="exoItalicFont" src="https://raw.githubusercontent.com/ngokevin/kframe/master/components/text-geometry/examples/vaporwave/fonts/exo2BlackItalic.typeface.json"></a-asset-item>
+      </a-assets>
 
-        <!-- 360-degree image. -->
-        <a-sky id="image-360" radius="10" src="#city"></a-sky>
-        
-        <!-- Image links. -->
-        <a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 -4">
-            <a-entity template="src: #link" data-src="#cubes" data-thumb="#cubes-thumb"></a-entity>
-            <a-entity template="src: #link" data-src="#city" data-thumb="#city-thumb"></a-entity>
-            <a-entity template="src: #link" data-src="#sechelt" data-thumb="#sechelt-thumb"></a-entity>
-        </a-entity>
+      <a-entity scale="2 2 2" geometry="primitive: torusKnot" position="0 6 -10" material="color: magenta; metalness:1; roughness: 0.1; sphericalEnvMap: #sky;">
+        <a-animation easing="linear" attribute="rotation" dur="10000" to="0 0 360" repeat="indefinite"></a-animation>
+      </a-entity>
 
-      	<!-- Camera + cursor. -->
-        <a-entity camera look-controls>
-            <a-cursor id="cursor"
-                animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
-                animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
-                event-set__1="_event: mouseenter; color: springgreen"
-                event-set__2="_event: mouseleave; color: black"
-                fuse="true"
-                raycaster="objects: .link"
-            ></a-cursor>
-        </a-entity>
-	</a-scene>
-</body>
+      <a-entity position="-3 1 -6" rotation="5 0 0">
+        <a-entity
+          rotation="0 0 5"
+          position="0 2 0.2"
+          text-geometry="value: Virtual Reality; font: #dawningFont; bevelEnabled: true; bevelSize: 0.05; bevelThickness: 0.05; curveSegments: 12; size: 1; height: 0;"
+          material="color:lavenderblush; metalness:1; roughness: 0; sphericalEnvMap: #pink;"
+        ></a-entity>
+
+        <a-entity position="-0.5 0.5 -0.5" scale="0.6 1.2 1" text-geometry="value: HACKWITUS'17; font: #exoFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1; curveSegments: 1; size: 1.5; height: 0.5;" material="color:pink; metalness:0.9; roughness: 0.05; sphericalEnvMap: #chrome;"></a-entity>
+
+        <a-entity position="1 0 0.3" text-geometry="value: VR Robot Arm; font: #exoItalicFont; style: italic; size: 0.8; weight: bold; height: 0;"
+                  material="shader: flat; color: white"></a-entity>
+        <a-entity position="1 0 0.3" text-geometry="value: VR Robot Arm; font: #exoItalicFont; style: italic; size: 0.8; weight: bold; height: 0; bevelEnabled: true; bevelSize: 0.04; bevelThickness: 0.04; curveSegments: 1"
+                  material="shader: flat; color: white; transparent: true; opacity: 0.4"></a-entity>
+      </a-entity>
+
+      <a-entity
+        geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0"
+        material="src: #grid; repeat: 10000 10000; transparent: true;metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"></a-entity>
+
+      <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
+      <a-entity light="color: ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
+      <a-entity light="color: white; intensity: 0.5" position="-5 5 15"></a-entity>
+      <a-entity light="color: white; type: ambient;"></a-entity>
+
+      <a-sky src="#sky" rotation="0 -90 0"></a-sky>
+    </a-scene>
+  </body>
 </html>
