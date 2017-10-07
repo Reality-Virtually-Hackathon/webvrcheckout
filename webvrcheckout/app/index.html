@@ -1,59 +1,108 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <title>WebVR Checkout Demo</title>
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="description" content="WebVR Checkout Demo">
-    <meta name="apple-mobile-web-app-capable" />
+  	<meta charset="utf-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+  	<title>A-Frame GUI Movie Player</title>
     <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
-    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.12.3/dist/aframe-extras.min.js"></script>
-    <!--build:css css/styles.min.css-->
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- endbuild -->
-    <!--build:js js/main.min.js -->
-    <script src="js/script.js"></script>
-    <!-- endbuild -->
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+	<style type="text/css">
+		@font-face{
+			font-family:"Ionicons";
+		}
+		body{font-family:Ionicons;} 
+		.visuallyhidden {
+			display: block;
+			border: 0;
+			clip: rect(0 0 0 0);
+			height: 1px;
+			width: 1px;
+			margin: -1px;
+			padding: 0;
+			overflow: hidden;
+			position: absolute !important;
+		}
+	</style>
+
+
+	<script>
+	(function() {
+		// Optimization for Repeat Views
+		if( sessionStorage.criticalFoftFontsLoaded ) {
+			console.log("fonts are already loaded");
+			return;
+		}
+		var guiWebFont = new FontFaceObserver('Fira Sans');
+		Promise.all([guiWebFont.load()]).then(function () {
+			console.log("fonts are loaded");
+			// Optimization for Repeat Views
+			sessionStorage.criticalFoftFontsLoaded = true;
+		});
+	})();
+	</script>
+
+
+
 </head>
-
 <body>
-    <a-scene >
-        <a-assets>
-            <a-mixin id="grid" geometry="primitive:plane; width: 25; height: 25" rotation="-90 0 0" material="src:assets/grid.png; repeat:25 25"></a-mixin>
-        </a-assets>
+	<a-scene>
+		<a-assets>
+			<a-asset-item id="fontfamily" src="https://fonts.googleapis.com/css?family=Fira+Sans"></a-asset-item>
+		</a-assets>
 
-        <a-box interactable="clickAction: hello" position="0 0 -2" color="red"></a-box>
-        <!-- Grid -->
-        <a-sky material="shader:flat; color:#BCC6CD"></a-sky>
+			
+		<a-entity 
+			obj-model="obj: #theater-obj;"
+			material="color:#999"
+			position="-1 -0.25 0"
+			scale="0.025 0.025 0.025"
+		></a-entity>
+
+		<a-video id="video-screen" src="#film"
+			width="8"
+			height="2.75"
+			position="-1 1.6 -4.8"
+		></a-video>
 
 
-        <!-- Checkpoints -->
-        <a-entity position="0 0 0">
-            <a-cylinder checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="0 0 -5.2" color="#39BB82"></a-cylinder>
-            <a-cylinder checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="3 0 0" color="#39BB82"></a-cylinder>
-            <a-cylinder checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="-3 0 0" color="#39BB82"></a-cylinder>
-        </a-entity>
 
-        <a-entity mixin="grid"></a-entity>
+		<a-gui-flex-container
+			flex-direction="row" justify-content="center" align-items="normal" component-padding="0.1" 
+			opacity="0.7" width="5" height="1"
+			position="0 0.45 -4" rotation="0 0 0" scale="0.5 0.5 0.5"
+		>
+			<a-gui-icon-button
+				width="0.75" height="0.75"
+				onclick="togglePlayback"
+				icon="ios-play"
+			>
+			</a-gui-icon-button>
+			<a-gui-icon-button
+				width="0.75" height="0.75"
+				onclick="stop"
+				icon="stop"
+			>
+			</a-gui-icon-button>
+			<a-gui-icon-button
+				width="0.75" height="0.75"
+				onclick="toggleSound"
+				icon="music-note"
+			>
+			</a-gui-icon-button>
+			<a-gui-toggle 
+				width="2.5" height="0.75"
+				onclick="toggleCaps"
+				value="Captions"
+				font-family="Arial"
+			>
+			</a-gui-toggle>
+		</a-gui-flex-container>
 
-        <a-entity camera="userHeight: 1.6" look-controls="" wasd-controls>
+
+		<a-sky color="#222"></a-sky>
+
+		<!-- Camera + cursor. -->
+		<a-entity camera="userHeight: 1.6" look-controls="" wasd-controls>
 			<a-gui-cursor id="cursor"
 				raycaster="interval: 1000; objects: [gui-interactable]"
 				fuse="true" fuseTimeout="2000"
@@ -62,12 +111,40 @@
 			</a-gui-cursor> <!-- /cursor -->
 		</a-entity> <!-- /camera -->
 
-    </a-scene>
+	</a-scene>
+
+	<script type="text/javascript">
+	    var video_el = document.getElementById("film");
+		function togglePlayback () {
+			console.log('play/pause movie');
+			if(!video_el.paused){
+            	video_el.pause();
+        	}
+        	else {
+            	video_el.play();
+        	}
+			// var filmEl = document.getElementById('video')
+			// var material = Object.assign({}, filmEl.getAttribute('material'))
+			// material.pause = !material.pause
+			// filmEl.setAttribute('material', material)
+		}
+		function stop () {
+			console.log('stop movie');
+			video_el.pause();
+		}
+		function toggleSound () {
+			console.log('toggleSound on/off');
+			if(!video_el.muted){
+            	video_el.muted == true;
+        	}
+        	else {
+            	video_el.muted == false;
+        	}
+		}
+		function toggleCaps () {
+			console.log('toggleCaps visible/hidden');			
+		}
+    </script>
+
 </body>
-<script type="text/javascript">
-    
-window.hello = function() {
-    console.log("clicked entity");
-}
-</script>
 </html>
