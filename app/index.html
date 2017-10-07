@@ -24,6 +24,7 @@
     <meta name="description" content="WebVR Checkout Demo">
     <meta name="apple-mobile-web-app-capable" />
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.12.3/dist/aframe-extras.min.js"></script>
     <!--build:css css/styles.min.css-->
     <link rel="stylesheet" href="css/styles.css">
     <!-- endbuild -->
@@ -41,10 +42,28 @@
         <a-box interactable="clickAction: hello" position="0 0 -2" color="red"></a-box>
         <!-- Grid -->
         <a-sky material="shader:flat; color:#BCC6CD"></a-sky>
-        <a-entity mixin="grid"></a-entity>
-        <a-entity camera="userHeight:1.6" look-controls wasd-controls>
-            <a-cursor></a-cursor>
+
+
+        <!-- Checkpoints -->
+        <a-entity position="0 0 0">
+            <a-cylinder checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="0 0 -5.2" color="#39BB82"></a-cylinder>
+            <a-cylinder checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="3 0 0" color="#39BB82"></a-cylinder>
+            <a-cylinder checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="-3 0 0" color="#39BB82"></a-cylinder>
         </a-entity>
+
+        <a-entity mixin="grid"></a-entity>
+
+        <a-entity camera="userHeight: 1.6"
+            universal-controls="movementControls: checkpoint"
+            checkpoint-controls="mode: animate">
+        <a-entity cursor
+            position="0 0 -1"
+            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;"
+            material="color: #CCC; shader: flat;">
+        </a-entity>
+
+      </a-entity>
+
     </a-scene>
 </body>
 <script type="text/javascript">
