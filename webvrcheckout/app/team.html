@@ -23,7 +23,7 @@
     <meta name="theme-color" content="#ffffff">
     <meta name="description" content="WebVR Checkout Demo">
     <meta name="apple-mobile-web-app-capable" />
-    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.12.3/dist/aframe-extras.min.js"></script>
     <!--build:css css/styles.min.css-->
     <link rel="stylesheet" href="css/styles.css">
@@ -52,10 +52,7 @@
         <a-sky material="src:#teamThumbnail; color:#fff" rotation="0 185 0 "></a-sky>
 
 
-        <a-entity camera="userHeight: 1.6"
-            raycaster="objects: [product]"
-            universal-controls="movementControls: checkpoint"
-            checkpoint-controls="mode: animate">
+        <a-entity camera="userHeight: 1.6" look-controls="" wasd-controls>
         <a-entity cursor
             position="0 0 -1"
             geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;"
