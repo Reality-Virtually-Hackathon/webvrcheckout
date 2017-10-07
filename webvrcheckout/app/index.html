@@ -34,26 +34,536 @@
 </head>
 
 <body>
-    <a-scene >
+    <a-scene physics="debug:false; friction: 0.1; restitution: 0.75">
         <a-assets>
+            <img id="teamThumbnail" src="assets/team.jpg">
+            <img id="3dofThumbnail" src="assets/equirectangular.jpg">
             <a-mixin id="grid" geometry="primitive:plane; width: 25; height: 25" rotation="-90 0 0" material="src:assets/grid.png; repeat:25 25"></a-mixin>
         </a-assets>
 
-        <a-box interactable="clickAction: hello" position="0 0 -2" color="red"></a-box>
+
+        <a-entity link="href: team.html; title: Hackerthon Team; image: #teamThumbnail"
+            position="-5 1 -1"
+            rotation="0 90 0 "
+        ></a-entity>
+
+        <a-entity link="href: 3dof.html; title: 360 Store; image: #3dofThumbnail"
+            position="5 1 -1"
+            rotation="0 -90 0 "
+        ></a-entity>
+
+        <a-entity id="shelf_left"
+            geometry="primitive:box; height:1.5; width:0.2; depth:5;"
+            material="color:#f5f5f5;"
+            position="-2 0.75 -4"
+        >
+            <a-entity
+                geometry="primitive:box; height:0.05; width:1; depth:5;"
+                material="color:#f5f5f5;"
+                position="0 0.45 0"
+            ></a-entity>            
+            <a-entity
+                geometry="primitive:box; height:0.05; width:1; depth:5;"
+                material="color:#f5f5f5;"
+                position="0 -0.15 0"
+            ></a-entity>            
+        </a-entity>
+        <a-entity id="shelf_right"
+            geometry="primitive:box; height:1.5; width:0.2; depth:5;"
+            material="color:#f5f5f5;"
+            position="2 0.75 -4"
+        >
+            <a-entity
+                geometry="primitive:box; height:0.05; width:1; depth:5;"
+                material="color:#f5f5f5;"
+                position="0 0.45 0"
+            ></a-entity>            
+            <a-entity
+                geometry="primitive:box; height:0.05; width:1; depth:5;"
+                material="color:#f5f5f5;"
+                position="0 -0.15 0"
+            ></a-entity>
+        </a-entity>
+
+        <!-- Items -->
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:blue;"
+            position="1.65 1.35 -1.75"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:blue;"
+            position="1.65 1.35 -2.25"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:blue;"
+            position="1.65 1.35 -2.75"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:blue;"
+            position="1.65 1.35 -3.25"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:blue;"
+            position="1.65 1.35 -3.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:blue;"
+            position="1.65 1.35 -4.25"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:blue;"
+            position="1.65 1.35 -4.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:blue;"
+            position="1.65 1.35 -5.25"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:blue;"
+            position="1.65 1.35 -5.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:blue;"
+            position="1.65 1.35 -6.25"
+        ></a-entity>
+
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:red;"
+            position="1.65 0.85 -1.75"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:red;"
+            position="1.65 0.85 -2.25"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:red;"
+            position="1.65 0.85 -2.75"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:red;"
+            position="1.65 0.85 -3.25"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:red;"
+            position="1.65 0.85 -3.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:red;"
+            position="1.65 0.85 -4.25"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:red;"
+            position="1.65 0.85 -4.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:red;"
+            position="1.65 0.85 -5.25"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:red;"
+            position="1.65 0.85 -5.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:red;"
+            position="1.65 0.85 -6.25"
+        ></a-entity>
+
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:blue;"
+            position="2.35 1.35 -1.75"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:blue;"
+            position="2.35 1.35 -2.25"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:blue;"
+            position="2.35 1.35 -2.75"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:blue;"
+            position="2.35 1.35 -3.25"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:blue;"
+            position="2.35 1.35 -3.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:blue;"
+            position="2.35 1.35 -4.25"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:blue;"
+            position="2.35 1.35 -4.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:blue;"
+            position="2.35 1.35 -5.25"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:blue;"
+            position="2.35 1.35 -5.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:blue;"
+            position="2.35 1.35 -6.25"
+        ></a-entity>
+
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:red;"
+            position="2.35 0.85 -1.75"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:red;"
+            position="2.35 0.85 -2.25"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:red;"
+            position="2.35 0.85 -2.75"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:red;"
+            position="2.35 0.85 -3.25"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:red;"
+            position="2.35 0.85 -3.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:red;"
+            position="2.35 0.85 -4.25"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:red;"
+            position="2.35 0.85 -4.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:red;"
+            position="2.35 0.85 -5.25"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:red;"
+            position="2.35 0.85 -5.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:red;"
+            position="2.35 0.85 -6.25"
+        ></a-entity>
+
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-1.65 1.35 -1.75"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-1.65 1.35 -2.25"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-1.65 1.35 -2.75"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-1.65 1.35 -3.25"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-1.65 1.35 -3.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-1.65 1.35 -4.25"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-1.65 1.35 -4.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-1.65 1.35 -5.25"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-1.65 1.35 -5.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-1.65 1.35 -6.25"
+        ></a-entity>
+
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:purple;"
+            position="-1.65 0.85 -1.75"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:purple;"
+            position="-1.65 0.85 -2.25"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:purple;"
+            position="-1.65 0.85 -2.75"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:purple;"
+            position="-1.65 0.85 -3.25"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:purple;"
+            position="-1.65 0.85 -3.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:purple;"
+            position="-1.65 0.85 -4.25"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:purple;"
+            position="-1.65 0.85 -4.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:purple;"
+            position="-1.65 0.85 -5.25"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:purple;"
+            position="-1.65 0.85 -5.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:purple;"
+            position="-1.65 0.85 -6.25"
+        ></a-entity>
+
+
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-1.65 1.35 -1.75"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-1.65 1.35 -2.25"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-1.65 1.35 -2.75"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-1.65 1.35 -3.25"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-1.65 1.35 -3.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-1.65 1.35 -4.25"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-1.65 1.35 -4.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-1.65 1.35 -5.25"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-1.65 1.35 -5.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-1.65 1.35 -6.25"
+        ></a-entity>
+
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:purple;"
+            position="-2.35 0.85 -1.75"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:purple;"
+            position="-2.35 0.85 -2.25"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:purple;"
+            position="-2.35 0.85 -2.75"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:purple;"
+            position="-2.35 0.85 -3.25"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:purple;"
+            position="-2.35 0.85 -3.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:purple;"
+            position="-2.35 0.85 -4.25"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:purple;"
+            position="-2.35 0.85 -4.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:purple;"
+            position="-2.35 0.85 -5.25"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:purple;"
+            position="-2.35 0.85 -5.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:sphere; radius:0.17;"
+            material="color:purple;"
+            position="-2.35 0.85 -6.25"
+        ></a-entity>
+
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-2.35 1.35 -1.75"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-2.35 1.35 -2.25"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-2.35 1.35 -2.75"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-2.35 1.35 -3.25"
+        ></a-entity> 
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-2.35 1.35 -3.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-2.35 1.35 -4.25"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-2.35 1.35 -4.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-2.35 1.35 -5.25"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-2.35 1.35 -5.75"
+        ></a-entity>
+        <a-entity product="rating:****; latestReview:great product;"
+            geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
+            material="color:yellow;"
+            position="-2.35 1.35 -6.25"
+        ></a-entity>        
+        <!-- end Items -->
         <!-- Grid -->
         <a-sky material="shader:flat; color:#BCC6CD"></a-sky>
 
-
+        <a-light type="directional" color="#BCC6CD" intensity="1" position="-2 3 1"></a-light>
+        <a-light type="ambient" color="#888"></a-light>
         <!-- Checkpoints -->
         <a-entity position="0 0 0">
-            <a-cylinder checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="0 0 -5.2" color="#39BB82"></a-cylinder>
-            <a-cylinder checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="3 0 0" color="#39BB82"></a-cylinder>
-            <a-cylinder checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="-3 0 0" color="#39BB82"></a-cylinder>
+            <a-cylinder checkpoint="offset: 0 1.6 0" radius="0.5" height="0.1" position="0 0 -5" color="#f30"></a-cylinder>
+            <a-cylinder checkpoint="offset: 0 1.6 0" radius="0.5" height="0.1" position="2 0 0" color="#f30"></a-cylinder>
+            <a-cylinder checkpoint="offset: 0 1.6 0" radius="0.5" height="0.1" position="-2 0 0" color="#f30"></a-cylinder>
+            <a-cylinder checkpoint="offset: 0 1.6 0" radius="0.5" height="0.1" position="4 0 -5" color="#f30"></a-cylinder>
+            <a-cylinder checkpoint="offset: 0 1.6 0" radius="0.5" height="0.1" position="-4 0 -5" color="#f30"></a-cylinder>
         </a-entity>
 
         <a-entity mixin="grid"></a-entity>
 
         <a-entity camera="userHeight: 1.6"
+            raycaster="objects: [product]"
             universal-controls="movementControls: checkpoint"
             checkpoint-controls="mode: animate">
         <a-entity cursor
