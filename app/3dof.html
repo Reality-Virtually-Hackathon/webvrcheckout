@@ -37,17 +37,18 @@
     <a-scene physics="debug:false; friction: 0.1; restitution: 0.75">
         <a-assets>
             <img id="6dofThumbnail" src="assets/roomscale.png">
+            <img id="3dofThumbnail" src="assets/equirectangular.jpg">
             <a-mixin id="grid" geometry="primitive:plane; width: 25; height: 25" rotation="-90 0 0" material="src:assets/grid.png; repeat:25 25"></a-mixin>
         </a-assets>
 
 
         <a-entity lookAt="[camera]" link="href: index.html; title: Roomscale Store; image: #6dofThumbnail"
             position="4 1 5"
-            rotation="0 -140 0 "
+            rotation="0 40 0 "
         ></a-entity>
 
         <!-- Grid -->
-        <a-sky material="src:#6dofThumbnail; color:#fff"></a-sky>
+        <a-sky material="src:#3dofThumbnail; color:#fff"></a-sky>
 
 
         <a-entity camera="userHeight: 1.6"
