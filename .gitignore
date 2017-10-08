@@ -9,3 +9,11 @@ orig_packages
 
 # Optional npm cache directory
 .npm
+
+
+# Untrack these
+*.DS_Store
+25/*
+assets/*
+conversion-wars/*
+hackwithus2017/*
