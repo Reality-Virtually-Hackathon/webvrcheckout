@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <!-- endbuild -->
     <!--build:js js/main.min.js -->
+    <script src="js/aframe-gui.js"></script>
     <script src="js/script.js"></script>
     <!-- endbuild -->
 </head>
@@ -36,11 +37,10 @@
 <body>
     <a-scene physics="debug:false; friction: 0.1; restitution: 0.75">
         <a-assets>
-            <img id="6dofThumbnail" src="assets/roomscale.png">
-            <img id="3dofThumbnail" src="assets/equirectangular.jpg">
+            <img id="6dofThumbnail" alt="6D" src="assets/roomscale.png">
+            <img id="3dofThumbnail" alt="3D" src="assets/equirectangular.jpg">
             <a-mixin id="grid" geometry="primitive:plane; width: 25; height: 25" rotation="-90 0 0" material="src:assets/grid.png; repeat:25 25"></a-mixin>
         </a-assets>
-
 
         <a-entity lookAt="[camera]" link="href: index.html; title: Roomscale Store; image: #6dofThumbnail"
             position="4 1 5"
@@ -50,15 +50,21 @@
         <!-- Grid -->
         <a-sky material="src:#3dofThumbnail; color:#fff"></a-sky>
 
+        <!-- Camera + cursor. -->
+        <a-entity camera="userHeight: 1.6"
+            universal-controls="movementControls: checkpoint"
+            checkpoint-controls="mode: animate"
+            look-controls=""
+            wasd-controls>
+            <a-gui-cursor id="cursor"
+                raycaster="interval: 1000; objects: [gui-interactable], [link]"
+                fuse="true" fuseTimeout="2000"
+                design="dot"
+            >
+            </a-gui-cursor> <!-- /cursor -->
+        </a-entity> <!-- /camera -->
 
-        <a-entity camera="userHeight: 1.6" universal-controls="movementControls: checkpoint" look-controls="" wasd-controls>
-        <a-entity cursor
-            position="0 0 -1"
-            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;"
-            material="color: #CCC; shader: flat;">
-        </a-entity>
-
-      </a-entity>
+        <a-entity checkout="pitch: -0.7;"></a-entity>
 
     </a-scene>
 </body>
