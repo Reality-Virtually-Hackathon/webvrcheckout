@@ -1,12 +1,17 @@
 
+// Converts from radians to degrees.
+var radiansToDegrees = function(radians) {
+    return radians * 180 / Math.PI;
+};
+
 
 AFRAME.registerComponent('product', {
     schema: {
         on: {default: 'click'},
         toggle: {type: 'boolean', default: false},
-        latestReview: {type: 'string', default: ''},
-        rating: {type: 'string', default: ''},
-        texture: {default: 'team.jpg'},
+        productName: {type: 'string', default: ''},
+        specs: {type: 'string', default: ''},
+        texture: {default: 'earth.jpg'},
     },
     init: function() {
         var data = this.data;
@@ -36,13 +41,21 @@ AFRAME.registerComponent('product', {
         this.panel = panel;
 
 
-        var text = document.createElement("a-text");
-        text.setAttribute('material', 'color: #fff; shader: flat; opacity:0.25;');
-        text.setAttribute('position', '0 0 0');
-        text.setAttribute('scale', '0.2 0.2 0.2');
-        text.setAttribute('text', 'value' , data.latestReview);
-        text.setAttribute('text', 'align' , 'center');
-        panel.appendChild(text);
+        var productName = document.createElement("a-text");
+        productName.setAttribute('material', 'color: #fff; shader: flat; opacity:0.25;');
+        productName.setAttribute('position', '0 0.04 0');
+        productName.setAttribute('scale', '0.4 0.4 0.4');
+        productName.setAttribute('text', 'value' , data.productName);
+        productName.setAttribute('text', 'align' , 'center');
+        panel.appendChild(productName);
+
+        var specs = document.createElement("a-text");
+        specs.setAttribute('material', 'color: #fff; shader: flat; opacity:0.25;');
+        specs.setAttribute('position', '0 -0.04 0');
+        specs.setAttribute('scale', '0.2 0.2 0.2');
+        specs.setAttribute('text', 'value' , data.specs);
+        specs.setAttribute('text', 'align' , 'center');
+        panel.appendChild(specs);
 
 
         el.addEventListener('mouseenter', function () {
@@ -102,4 +115,146 @@ AFRAME.registerComponent('product', {
             console.log('state toggle on');
         }
     }
+});
+
+
+
+AFRAME.registerComponent('shopping', {
+    schema: {
+        pitch: { type: 'number', default: 0 }, // max: Math.PI/2, min: - Math.PI/2  
+    },
+    init: function() {
+        var newPos = this.newPos = new THREE.Vector3();
+        var orientationVisible = false;
+        var data = this.data;
+        var _this = this;
+
+        _this.hide();
+        //single camera
+        this.cameraEl = cameraEl = document.querySelector('a-entity[camera]');
+        if (!this.cameraEl) {
+            this.cameraEl = document.querySelector('a-camera');
+        };
+
+        this.cameraEl.addEventListener('componentchanged', function(evt) {
+            if (evt.detail.name === 'rotation') {
+                if (this.object3D.getWorldRotation().x <= data.pitch) {
+                    if (!orientationVisible) {
+                        _this.show();
+                        orientationVisible = true;
+                    }
+                } else {
+                    if (orientationVisible) {
+                        _this.hide();
+                        orientationVisible = false;
+                    }
+                }
+            }
+        });
+
+        this.el.addEventListener('mouseenter', function(evt) {
+            // var desc = evt.detail.intersection.object.el.getAttribute('desc');
+
+            // if (desc) {
+            //     speak("You are facing " + desc);
+            // }
+
+        });
+
+        this.el.addEventListener('mouseleave', function() {
+            // silence();
+        });
+
+    },
+
+    show: function() {
+//        this.el.setAttribute('scale', '1 1 1');
+    },
+
+    hide: function() {
+//        this.el.setAttribute('scale', '0.03 0.03 0.03');
+    },
+
+    tick: function() {
+        this.newPos.setFromMatrixPosition(this.cameraEl.object3D.matrixWorld);
+        this.el.setAttribute('position', this.newPos.x + ' 0 ' + this.newPos.z);
+        var newRot = this.cameraEl.object3D.getWorldRotation();
+        this.el.setAttribute("rotation", "0 " + radiansToDegrees(newRot.y) + " 0");
+    }
+});
+
+
+AFRAME.registerComponent('checkout', {
+    schema: {
+        pitch: { type: 'number', default: 0 }, // max: Math.PI/2, min: - Math.PI/2  
+    },
+    init: function() {
+        var newPos = this.newPos = new THREE.Vector3();
+        var orientationVisible = false;
+        var data = this.data;
+        var _this = this;
+
+        _this.hide();
+        //single camera
+        this.cameraEl = cameraEl = document.querySelector('a-entity[camera]');
+        if (!this.cameraEl) {
+            this.cameraEl = document.querySelector('a-camera');
+        };
+
+        this.cameraEl.addEventListener('componentchanged', function(evt) {
+            if (evt.detail.name === 'rotation') {
+                if (this.object3D.getWorldRotation().x <= data.pitch) {
+                    if (!orientationVisible) {
+                        _this.show();
+                        orientationVisible = true;
+                    }
+                } else {
+                    if (orientationVisible) {
+                        _this.hide();
+                        orientationVisible = false;
+                    }
+                }
+            }
+        });
+
+        //  adding ring
+        var icon = document.createElement("a-entity");
+        icon.setAttribute('geometry', `primitive: ring; radiusInner:0.15; radiusOuter:0.2;`);
+        icon.setAttribute('material', `shader: flat; side:front; color:white; opacity:0.75;`);
+        icon.setAttribute('rotation', `-90 0 0`);
+        icon.setAttribute('position', `0 0.65 -0.65`);
+        this.el.appendChild(icon);
+
+        this.el.addEventListener('mouseenter', function(evt) {
+            // var desc = evt.detail.intersection.object.el.getAttribute('desc');
+
+            // if (desc) {
+            //     speak("You are facing " + desc);
+            // }
+
+        });
+
+        this.el.addEventListener('mouseleave', function() {
+            // silence();
+        });
+
+    },
+
+    show: function() {
+        this.el.setAttribute('scale', '1 1 1');
+    },
+
+    hide: function() {
+        this.el.setAttribute('scale', '0.03 0.03 0.03');
+    },
+
+    tick: function() {
+        this.newPos.setFromMatrixPosition(this.cameraEl.object3D.matrixWorld);
+        this.el.setAttribute('position', this.newPos.x + ' 0 ' + this.newPos.z);
+        var newRot = this.cameraEl.object3D.getWorldRotation();
+        this.el.setAttribute("rotation", "0 " + radiansToDegrees(newRot.y) + " 0");
+    }
+
+
+
 });

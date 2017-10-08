@@ -37,9 +37,10 @@
 <body>
     <a-scene>
         <a-assets>
+            <img id="sky" src="assets/stars.jpg">
             <img id="teamThumbnail" src="assets/team.jpg">
             <img id="3dofThumbnail" src="assets/equirectangular.jpg">
-            <a-mixin id="grid" geometry="primitive:plane; width: 25; height: 25" rotation="-90 0 0" material="src:assets/grid.png; repeat:25 25"></a-mixin>
+            <a-mixin id="grid" geometry="primitive:plane; width: 25; height: 25" rotation="-90 0 0" material="src:assets/grid.png; repeat:25 25; transparent:true;" ></a-mixin>
         </a-assets>
 
         <a-entity link="href: team.html; title: Hackerthon Team; image: #teamThumbnail"
@@ -54,245 +55,170 @@
 
         <a-entity id="shelf_left"
             geometry="primitive:box; height:1.5; width:0.2; depth:5;"
-            material="color:#f5f5f5;"
+            material="color:#666;"
             position="-2 0.75 -4"
         >
             <a-entity
-                geometry="primitive:box; height:0.05; width:1; depth:5;"
+                geometry="primitive:box; height:0.05; width:0.9; depth:5;"
                 material="color:#f5f5f5;"
                 position="0 0.45 0"
             ></a-entity>            
             <a-entity
-                geometry="primitive:box; height:0.05; width:1; depth:5;"
+                geometry="primitive:box; height:0.05; width:1.45; depth:5;"
                 material="color:#f5f5f5;"
                 position="0 -0.15 0"
             ></a-entity>            
         </a-entity>
         <a-entity id="shelf_right"
             geometry="primitive:box; height:1.5; width:0.2; depth:5;"
-            material="color:#f5f5f5;"
+            material="color:#666;"
             position="2 0.75 -4"
         >
             <a-entity
-                geometry="primitive:box; height:0.05; width:1; depth:5;"
+                geometry="primitive:box; height:0.05; width:0.9; depth:5;"
                 material="color:#f5f5f5;"
                 position="0 0.45 0"
             ></a-entity>            
             <a-entity
-                geometry="primitive:box; height:0.05; width:1; depth:5;"
+                geometry="primitive:box; height:0.05; width:1.45; depth:5;"
                 material="color:#f5f5f5;"
                 position="0 -0.15 0"
             ></a-entity>
         </a-entity>
 
         <!-- Items -->
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 1.35 -1.75"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:ceres.jpg; specs:unlivable; productName:Ceres;" position="1.65 1.4 -1.75"
         ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 1.35 -2.25"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:earth.jpg; specs:livable; productName:Earth;" position="1.65 1.4 -2.75"
         ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 1.35 -2.75"
-        ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 1.35 -3.25"
-        ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 1.35 -3.75"
+         <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:Venus;" position="1.65 1.4 -3.75"
         ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 1.35 -4.25"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:Eris.jpg; specs:unlivable; productName:Eris;" position="1.65 1.4 -4.75"
         ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 1.35 -4.75"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 1.35 -5.25"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 1.35 -5.75"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 1.35 -6.25"
+         <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:Haumea.jpg; specs:unlivable; productName:haumea;" position="1.65 1.4 -5.75"
         ></a-entity>
 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 0.85 -1.75"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:mercury.jpg; specs:unlivable; productName:Mercury;" position="1.35 0.85 -1.75"
         ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 0.85 -2.25"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:moon.jpg; specs:unlivable; productName:Moon;" position="1.35 0.85 -2.75"
         ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 0.85 -2.75"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:neptune.jpg; specs:unlivable; productName:Neptune;" position="1.35 0.85 -3.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:saturn.jpg; specs:unlivable; productName:Saturn;" position="1.35 0.85 -4.75"
+        ><a-ring radius-inner="0.215" radius-outer="0.24" color="#fff" material="opacity:0.75" rotation="30 30 0"></a-ring>
+        </a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:sun.jpg; specs:unlivable; productName:Sun;" position="1.35 0.85 -5.75"
+        ></a-entity>
+ 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:Venus;" position="2.35 1.4 -1.75"
         ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 0.85 -3.25"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="2.35 1.4 -2.75"
         ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 0.85 -3.75"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="2.35 1.4 -3.75"
         ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 0.85 -4.25"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="2.35 1.4 -4.75"
         ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 0.85 -4.75"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 0.85 -5.25"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 0.85 -5.75"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 0.85 -6.25"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="2.35 1.4 -5.75"
         ></a-entity>
 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 1.35 -1.75"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="2.65 0.85 -1.75"
         ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 1.35 -2.25"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="2.65 0.85 -2.75"
         ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 1.35 -2.75"
-        ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 1.35 -3.25"
-        ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 1.35 -3.75"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="2.65 0.85 -3.75"
         ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 1.35 -4.25"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="2.65 0.85 -4.75"
         ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 1.35 -4.75"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 1.35 -5.25"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 1.35 -5.75"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 1.35 -6.25"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="2.65 0.85 -5.75"
         ></a-entity>
 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 0.85 -1.75"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="-1.65 1.4 -1.75"
         ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 0.85 -2.25"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="-1.65 1.4 -2.75"
         ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 0.85 -2.75"
-        ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 0.85 -3.25"
-        ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 0.85 -3.75"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="-1.65 1.4 -3.75"
         ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 0.85 -4.25"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="-1.65 1.4 -4.75"
         ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 0.85 -4.75"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 0.85 -5.25"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 0.85 -5.75"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 0.85 -6.25"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="-1.65 1.4 -5.75"
         ></a-entity>
 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -1.75"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="-1.35 0.85 -1.75"
         ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -2.25"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="-1.35 0.85 -2.75"
         ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -2.75"
-        ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -3.25"
-        ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -3.75"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="-1.35 0.85 -3.75"
         ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -4.25"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="-1.35 0.85 -4.75"
         ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -4.75"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -5.25"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -5.75"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -6.25"
-        ></a-entity>
-
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 0.85 -1.75"
-        ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 0.85 -2.25"
-        ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 0.85 -2.75"
-        ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 0.85 -3.25"
-        ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 0.85 -3.75"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 0.85 -4.25"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 0.85 -4.75"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 0.85 -5.25"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 0.85 -5.75"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 0.85 -6.25"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="-1.35 0.85 -5.75"
         ></a-entity>
 
 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -1.75"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="-1.65 1.4 -1.75"
         ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -2.25"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="-1.65 1.4 -2.75"
         ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -2.75"
-        ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -3.25"
-        ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -3.75"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="-1.65 1.4 -3.75"
         ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -4.25"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="-1.65 1.4 -4.75"
         ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -4.75"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -5.25"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -5.75"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -6.25"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="-1.65 1.4 -5.75"
         ></a-entity>
 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 0.85 -1.75"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="-2.65 0.85 -1.75"
         ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 0.85 -2.25"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="-2.65 0.85 -2.75"
         ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 0.85 -2.75"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="-2.65 0.85 -3.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="-2.65 0.85 -4.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="-2.65 0.85 -5.75"
+        ></a-entity>
+ 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="-2.35 1.4 -1.75"
         ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 0.85 -3.25"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="-2.35 1.4 -2.75"
         ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 0.85 -3.75"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="-2.35 1.4 -3.75"
         ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 0.85 -4.25"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="-2.35 1.4 -4.75"
         ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 0.85 -4.75"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="texture:venus.jpg; specs:unlivable; productName:earth;" position="-2.35 1.4 -5.75"
         ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 0.85 -5.25"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 0.85 -5.75"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 0.85 -6.25"
-        ></a-entity>
-
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 1.35 -1.75"
-        ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 1.35 -2.25"
-        ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 1.35 -2.75"
-        ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 1.35 -3.25"
-        ></a-entity> 
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 1.35 -3.75"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 1.35 -4.25"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 1.35 -4.75"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 1.35 -5.25"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 1.35 -5.75"
-        ></a-entity>
-        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 1.35 -6.25"
-        ></a-entity>        
         <!-- end Items -->
         <!-- Grid -->
-        <a-sky material="shader:flat; color:#BCC6CD"></a-sky>
+        <a-sky material="shader:flat; color:#fff; src:#sky"></a-sky>
+        <a-torus color="#fff" radius="20" radius-tubular="0.1" scale="1 1 3" rotation="45 45 0"></a-torus>
+        <a-torus color="#fff" radius="20" radius-tubular="0.1" scale="1 1 3" rotation="90 90 0"></a-torus>
+        <a-torus color="#fff" radius="20" radius-tubular="0.1" scale="1 1 3" rotation="135 135 0"></a-torus>
+        <a-torus color="#fff" radius="20" radius-tubular="0.1" scale="1 1 3" rotation="180 180 0"></a-torus>
+        <a-entity text="font: monoid; value:WELCOME TO SPACE MALL; align:center" scale="20 20 20" position="0 5 -9"></a-entity>
 
         <a-light type="directional" color="#BCC6CD" intensity="1" position="-2 3 1"></a-light>
         <a-light type="ambient" color="#888"></a-light>
         <!-- Checkpoints -->
         <a-entity position="0 0 0">
-            <a-cylinder checkpoint="offset: 0 1.6 0" radius="0.5" height="0.1" position="0 0 -5" color="#f30"></a-cylinder>
-            <a-cylinder checkpoint="offset: 0 1.6 0" radius="0.5" height="0.1" position="2 0 0" color="#f30"></a-cylinder>
-            <a-cylinder checkpoint="offset: 0 1.6 0" radius="0.5" height="0.1" position="-2 0 0" color="#f30"></a-cylinder>
-            <a-cylinder checkpoint="offset: 0 1.6 0" radius="0.5" height="0.1" position="4 0 -5" color="#f30"></a-cylinder>
-            <a-cylinder checkpoint="offset: 0 1.6 0" radius="0.5" height="0.1" position="-4 0 -5" color="#f30"></a-cylinder>
+            <a-cylinder checkpoint="offset: 0 1.6 0" radius="0.5" height="0.1" position="0 0 -4" color="#666">
+                <a-ring radius-inner="0.45" radius-outer="0.475" color="#09FFFF" rotation="-90 0 0" position="0 0.15 0"></a-ring>
+            </a-cylinder>
+            <a-cylinder checkpoint="offset: 0 1.6 0" radius="0.5" height="0.1" position="2 0 0" color="#666">
+                <a-ring radius-inner="0.45" radius-outer="0.475" color="#09FFFF" rotation="-90 0 0" position="0 0.15 0"></a-ring>
+            </a-cylinder>
+            <a-cylinder checkpoint="offset: 0 1.6 0" radius="0.5" height="0.1" position="-2 0 0" color="#666">
+                <a-ring radius-inner="0.45" radius-outer="0.475" color="#09FFFF" rotation="-90 0 0" position="0 0.15 0"></a-ring>
+            </a-cylinder>
+            <a-cylinder checkpoint="offset: 0 1.6 0" radius="0.5" height="0.1" position="4 0 -4" color="#666">
+                <a-ring radius-inner="0.45" radius-outer="0.475" color="#09FFFF" rotation="-90 0 0" position="0 0.15 0"></a-ring>
+            </a-cylinder>
+            <a-cylinder checkpoint="offset: 0 1.6 0" radius="0.5" height="0.1" position="-4 0 -4" color="#666">
+                <a-ring radius-inner="0.45" radius-outer="0.475" color="#09FFFF" rotation="-90 0 0" position="0 0.15 0"></a-ring>
+            </a-cylinder>
         </a-entity>
 
         <a-entity mixin="grid"></a-entity>
 
-        <a-box position="0 0 -3" color="blue"></a-box>
 
         <!-- Camera + cursor. -->
         <a-entity camera="userHeight: 1.6"
@@ -306,52 +232,12 @@
             </a-gui-cursor> <!-- /cursor -->
         </a-entity> <!-- /camera -->
 
-    <a-entity id="cart"
-        position="0 0 0"
+    <a-entity checkout="pitch: -0.7;"></a-entity>
+
+    <a-entity shopping id="cart"
         >
         <a-entity position="0 0.25 -0.75">
-            <a-entity position="-0.25 0 0.5"
-                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
-            ></a-entity>            
-            <a-entity position="-0.25 0 0.25"
-                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
-            ></a-entity>            
-            <a-entity position="-0.25 0 0"
-                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
-            ></a-entity>            
-            <a-entity position="-0.25 0 -0.25"
-                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
-            ></a-entity>            
-            <a-entity position="-0.25 0 -0.5"
-                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
-            ></a-entity>            
-            <a-entity position="0.25 0 0.5"
-                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
-            ></a-entity>            
-            <a-entity position="0.25 0 0.25"
-                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
-            ></a-entity>            
-            <a-entity position="0.25 0 0"
-                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
-            ></a-entity>            
-            <a-entity position="0.25 0 -0.25"
-                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
-            ></a-entity>            
-            <a-entity position="0.25 0 -0.5"
-                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
-            ></a-entity> 
-            <a-entity position="0.1 0 -0.5"
-                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
-            ></a-entity> 
-            <a-entity position="-0.1 0 -0.5"
-                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
-            ></a-entity> 
-            <a-entity position="0.1 0 0.5"
-                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
-            ></a-entity> 
-            <a-entity position="-0.1 0 0.5"
-                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
-            ></a-entity> 
+            
             <a-entity
                 geometry="primitive:box; height:0.02; width:0.02; depth:1;"
                 material="color:grey;"
@@ -377,6 +263,30 @@
                 material="color:grey;"
                 position="0 -0.225 0"
             ></a-entity>
+
+            <a-entity
+                geometry="primitive:box; height:0.5; width:0.02; depth:1;"
+                material="color:#09FFFF;"
+                position="0.25 0 0"
+            ></a-entity>
+            <a-entity
+                geometry="primitive:box; height:0.5; width:0.02; depth:1;"
+                material="color:#09FFFF;"
+                position="-0.25 0 0"
+            ></a-entity>
+
+            <a-entity
+                geometry="primitive:box; height:0.5; width:0.5; depth:0.02;"
+                material="color:#09FFFF;"
+                position="0 0 0.5"
+            ></a-entity>
+            <a-entity
+                geometry="primitive:box; height:0.5; width:0.5; depth:0.02;"
+                material="color:#09FFFF;"
+                position="0 0 -0.5"
+            ></a-entity>
+
+
         </a-entity>
     </a-entity>
 
