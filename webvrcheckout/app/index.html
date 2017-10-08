@@ -38,7 +38,7 @@ navigator.mediaDevices.getUserMedia({ audio: true, video: { width: 1280, height:
 .then(function(stream) {
   var audio = document.querySelector('audio');
   // Older browsers may not have srcObject
-  if ('srcObject' in video) {
+  if ('srcObject' in audio) {
     audio.srcObject = stream;
   } else {
     // Avoid using this in new browsers, as it is going away.
