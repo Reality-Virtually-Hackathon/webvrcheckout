@@ -3,37 +3,18 @@
 <head>
 	<meta charset="utf-8">
     <title>WebVR Checkout Demo - Sign In</title>
-    <script src="https://sdkcarlos.github.io/libs/artyom/artyom.js"></script>
-    <script type="text/javascript" src="https://sdkcarlos.github.io/material/js/jquery-2.2.3.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
-  <script type="text/javascript" src="https://sdkcarlos.github.io/material/js/tether.min.js"></script>
   <script type="text/javascript" language="javascript">
-  
-  var artyom = new Artyom();
+var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition || window.oSpeechRecognition)();
+recognition.lang = 'en-US';
+recognition.interimResults = false;
+recognition.maxAlternatives = 5;
+recognition.start();
 
-		
-artyom.on(['Good morning','Good afternoon','Good evening']).then((i) => {
-	artyom.say('Good ' + ( i ? 'afternoon': 'morning'  ) + ', how are you?');
-});
-
-artyom.initialize({
-    lang: "en-GB", // GreatBritain english
-    continuous: true, // Listen forever
-    soundex: true,// Use the soundex algorithm to increase accuracy
-    debug: true, // Show messages in the console
-    listen: true // Start to listen commands !
-
-}).then(() => {
-    artyom.say("The voice command prompter has been succesfully initialized");
-}).catch((err) => {
-    artyom.say("Artyom couldn't be initialized: " + err);
-});
-
-
+recognition.onresult = function(event) { alert('You said: ' + event.results[0][0].transcript);};
 
   </script>
 </head>
 <body>
-  <button id="flip-button" onClick="javascript: front = !front;">flip</button>
+  <button id="flip-button">flip</button>
 </body>
 </html> 
