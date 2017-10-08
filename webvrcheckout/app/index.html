@@ -3,57 +3,48 @@
 <head>
 	<meta charset="utf-8">
     <title>WebVR Checkout Demo - Sign In</title>
-    
+    <script src="https://sdkcarlos.github.io/libs/artyom/artyom.js"></script>
+    <script type="text/javascript" src="https://sdkcarlos.github.io/material/js/jquery-2.2.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+  <script type="text/javascript" src="https://sdkcarlos.github.io/material/js/tether.min.js"></script>
   <script type="text/javascript" language="javascript">
-   // Older browsers might not implement mediaDevices at all, so we set an empty object first
-if (navigator.mediaDevices === undefined) {
-  navigator.mediaDevices = {};
-}
+  
+  var artyom = new Artyom();
 
-// Some browsers partially implement mediaDevices. We can't just assign an object
-// with getUserMedia as it would overwrite existing properties.
-// Here, we will just add the getUserMedia property if it's missing.
-if (navigator.mediaDevices.getUserMedia === undefined) {
-  navigator.mediaDevices.getUserMedia = function(constraints) {
-
-    // First get ahold of the legacy getUserMedia, if present
-    var getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia; 
-
-    // Some browsers just don't implement it - return a rejected promise with an error
-    // to keep a consistent interface
-    if (!getUserMedia) {
-      return Promise.reject(new Error('getUserMedia is not implemented in this browser'));
+		
+artyom.on(['Good morning','Good afternoon']).then((i) => {
+    switch (i) {
+        case 0:
+            artyom.say("Good morning, how are you?");
+        break;
+        case 1:
+            artyom.say("Good afternoon, how are you?");
+        break;            
     }
-
-    // Otherwise, wrap the call to the old navigator.getUserMedia with a Promise
-    return new Promise(function(resolve, reject) {
-      getUserMedia.call(navigator, constraints, resolve, reject);
-    });
-  }
-}
-
-var front = false;
-
-navigator.mediaDevices.getUserMedia({ audio: true, video: { width: 1280, height: 720, facingMode: ( front ? "user" : "environment" ) } })
-.then(function(stream) {
-  var audio = document.querySelector('audio');
-  // Older browsers may not have srcObject
-  if ('srcObject' in audio) {
-    audio.srcObject = stream;
-  } else {
-    // Avoid using this in new browsers, as it is going away.
-    audio.src = window.URL.createObjectURL(stream);
-  }
-  audio.onloadedmetadata = function(e) {
-    audio.play();
-  };
-})
-.catch(function(err) {
-  alert(err.name + ': ' + err.message);
 });
+
+artyom.initialize({
+    lang: "en-GB", // GreatBritain english
+    continuous: true, // Listen forever
+    soundex: true,// Use the soundex algorithm to increase accuracy
+    debug: true, // Show messages in the console
+    executionKeyword: "and do it now",
+    listen: true, // Start to listen commands !
+
+    // If providen, you can only trigger a command if you say its name
+    // e.g to trigger Good Morning, you need to say "Jarvis Good Morning"
+    name: "Jarvis" 
+}).then(() => {
+    artyom.say("Artyom has been succesfully initialized");
+}).catch((err) => {
+    artyom.say("Artyom couldn't be initialized: " + err);
+});
+
+
+
   </script>
 </head>
 <body>
-  <audio autoplay></audio><button id="flip-button" onClick="javascript: front = !front;">flip</button>
+  <button id="flip-button" onClick="javascript: front = !front;">flip</button>
 </body>
 </html> 
