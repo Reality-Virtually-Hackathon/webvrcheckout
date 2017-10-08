@@ -1,20 +1,390 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-    <title>WebVR Checkout Demo - Sign In</title>
-  <script type="text/javascript" language="javascript">
-var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition || window.oSpeechRecognition)();
-recognition.lang = 'en-US';
-recognition.interimResults = false;
-recognition.maxAlternatives = 5;
-recognition.start();
-
-recognition.onresult = function(event) { alert('You said: ' + event.results[0][0].transcript);};
-
-  </script>
+    <meta charset="utf-8">
+    <title>WebVR Checkout Demo</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="WebVR Checkout Demo">
+    <meta name="apple-mobile-web-app-capable" />
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.12.3/dist/aframe-extras.min.js"></script>
+    <!--build:css css/styles.min.css-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- endbuild -->
+    <!--build:js js/main.min.js -->
+    <script src="js/aframe-gui.js"></script>
+    <script src="js/script.js"></script>
+    <!-- endbuild -->
 </head>
+
 <body>
-  <button id="flip-button">flip</button>
+    <a-scene>
+        <a-assets>
+            <img id="teamThumbnail" src="assets/team.jpg">
+            <img id="3dofThumbnail" src="assets/equirectangular.jpg">
+            <a-mixin id="grid" geometry="primitive:plane; width: 25; height: 25" rotation="-90 0 0" material="src:assets/grid.png; repeat:25 25"></a-mixin>
+        </a-assets>
+
+        <a-entity link="href: team.html; title: Hackerthon Team; image: #teamThumbnail"
+            position="-5 1 -1"
+            rotation="0 90 0 "
+        ></a-entity>
+
+        <a-entity link="href: 3dof.html; title: 360 Store; image: #3dofThumbnail"
+            position="5 1 -1"
+            rotation="0 -90 0 "
+        ></a-entity>
+
+        <a-entity id="shelf_left"
+            geometry="primitive:box; height:1.5; width:0.2; depth:5;"
+            material="color:#f5f5f5;"
+            position="-2 0.75 -4"
+        >
+            <a-entity
+                geometry="primitive:box; height:0.05; width:1; depth:5;"
+                material="color:#f5f5f5;"
+                position="0 0.45 0"
+            ></a-entity>            
+            <a-entity
+                geometry="primitive:box; height:0.05; width:1; depth:5;"
+                material="color:#f5f5f5;"
+                position="0 -0.15 0"
+            ></a-entity>            
+        </a-entity>
+        <a-entity id="shelf_right"
+            geometry="primitive:box; height:1.5; width:0.2; depth:5;"
+            material="color:#f5f5f5;"
+            position="2 0.75 -4"
+        >
+            <a-entity
+                geometry="primitive:box; height:0.05; width:1; depth:5;"
+                material="color:#f5f5f5;"
+                position="0 0.45 0"
+            ></a-entity>            
+            <a-entity
+                geometry="primitive:box; height:0.05; width:1; depth:5;"
+                material="color:#f5f5f5;"
+                position="0 -0.15 0"
+            ></a-entity>
+        </a-entity>
+
+        <!-- Items -->
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 1.35 -1.75"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 1.35 -2.25"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 1.35 -2.75"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 1.35 -3.25"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 1.35 -3.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 1.35 -4.25"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 1.35 -4.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 1.35 -5.25"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 1.35 -5.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 1.35 -6.25"
+        ></a-entity>
+
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 0.85 -1.75"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 0.85 -2.25"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 0.85 -2.75"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 0.85 -3.25"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 0.85 -3.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 0.85 -4.25"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 0.85 -4.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 0.85 -5.25"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 0.85 -5.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="1.65 0.85 -6.25"
+        ></a-entity>
+
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 1.35 -1.75"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 1.35 -2.25"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 1.35 -2.75"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 1.35 -3.25"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 1.35 -3.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 1.35 -4.25"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 1.35 -4.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 1.35 -5.25"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 1.35 -5.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 1.35 -6.25"
+        ></a-entity>
+
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 0.85 -1.75"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 0.85 -2.25"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 0.85 -2.75"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 0.85 -3.25"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 0.85 -3.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 0.85 -4.25"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 0.85 -4.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 0.85 -5.25"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 0.85 -5.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="2.35 0.85 -6.25"
+        ></a-entity>
+
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -1.75"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -2.25"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -2.75"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -3.25"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -3.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -4.25"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -4.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -5.25"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -5.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -6.25"
+        ></a-entity>
+
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 0.85 -1.75"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 0.85 -2.25"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 0.85 -2.75"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 0.85 -3.25"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 0.85 -3.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 0.85 -4.25"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 0.85 -4.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 0.85 -5.25"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 0.85 -5.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 0.85 -6.25"
+        ></a-entity>
+
+
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -1.75"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -2.25"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -2.75"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -3.25"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -3.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -4.25"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -4.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -5.25"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -5.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-1.65 1.35 -6.25"
+        ></a-entity>
+
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 0.85 -1.75"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 0.85 -2.25"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 0.85 -2.75"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 0.85 -3.25"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 0.85 -3.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 0.85 -4.25"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 0.85 -4.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 0.85 -5.25"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 0.85 -5.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 0.85 -6.25"
+        ></a-entity>
+
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 1.35 -1.75"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 1.35 -2.25"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 1.35 -2.75"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 1.35 -3.25"
+        ></a-entity> 
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 1.35 -3.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 1.35 -4.25"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 1.35 -4.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 1.35 -5.25"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 1.35 -5.75"
+        ></a-entity>
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;" position="-2.35 1.35 -6.25"
+        ></a-entity>        
+        <!-- end Items -->
+        <!-- Grid -->
+        <a-sky material="shader:flat; color:#BCC6CD"></a-sky>
+
+        <a-light type="directional" color="#BCC6CD" intensity="1" position="-2 3 1"></a-light>
+        <a-light type="ambient" color="#888"></a-light>
+        <!-- Checkpoints -->
+        <a-entity position="0 0 0">
+            <a-cylinder checkpoint="offset: 0 1.6 0" radius="0.5" height="0.1" position="0 0 -5" color="#f30"></a-cylinder>
+            <a-cylinder checkpoint="offset: 0 1.6 0" radius="0.5" height="0.1" position="2 0 0" color="#f30"></a-cylinder>
+            <a-cylinder checkpoint="offset: 0 1.6 0" radius="0.5" height="0.1" position="-2 0 0" color="#f30"></a-cylinder>
+            <a-cylinder checkpoint="offset: 0 1.6 0" radius="0.5" height="0.1" position="4 0 -5" color="#f30"></a-cylinder>
+            <a-cylinder checkpoint="offset: 0 1.6 0" radius="0.5" height="0.1" position="-4 0 -5" color="#f30"></a-cylinder>
+        </a-entity>
+
+        <a-entity mixin="grid"></a-entity>
+
+        <a-box position="0 0 -3" color="blue"></a-box>
+
+        <!-- Camera + cursor. -->
+        <a-entity camera="userHeight: 1.6"
+            universal-controls="movementControls: checkpoint"
+            checkpoint-controls="mode: animate">
+            <a-gui-cursor id="cursor"
+                raycaster="interval: 1000; objects: [gui-interactable], [checkpoint], [link]"
+                fuse="false" fuseTimeout="2000"
+                design="dot"
+            >
+            </a-gui-cursor> <!-- /cursor -->
+        </a-entity> <!-- /camera -->
+
+    <a-entity id="cart"
+        position="0 0 0"
+        >
+        <a-entity position="0 0.25 -0.75">
+            <a-entity position="-0.25 0 0.5"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity>            
+            <a-entity position="-0.25 0 0.25"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity>            
+            <a-entity position="-0.25 0 0"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity>            
+            <a-entity position="-0.25 0 -0.25"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity>            
+            <a-entity position="-0.25 0 -0.5"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity>            
+            <a-entity position="0.25 0 0.5"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity>            
+            <a-entity position="0.25 0 0.25"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity>            
+            <a-entity position="0.25 0 0"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity>            
+            <a-entity position="0.25 0 -0.25"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity>            
+            <a-entity position="0.25 0 -0.5"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity> 
+            <a-entity position="0.1 0 -0.5"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity> 
+            <a-entity position="-0.1 0 -0.5"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity> 
+            <a-entity position="0.1 0 0.5"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity> 
+            <a-entity position="-0.1 0 0.5"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity> 
+            <a-entity
+                geometry="primitive:box; height:0.02; width:0.02; depth:1;"
+                material="color:grey;"
+                position="0.25 0.25 0"
+            ></a-entity>
+            <a-entity
+                geometry="primitive:box; height:0.02; width:0.02; depth:1;"
+                material="color:grey;"
+                position="-0.25 0.25 0"
+            ></a-entity>
+            <a-entity
+                geometry="primitive:box; height:0.02; width:0.525; depth:0.02;"
+                material="color:grey;"
+                position="0 0.25 0.5"
+            ></a-entity>
+            <a-entity
+                geometry="primitive:box; height:0.02; width:0.525; depth:0.02;"
+                material="color:grey;"
+                position="0 0.25 -0.5"
+            ></a-entity>
+            <a-entity
+                geometry="primitive:box; height:0.02; width:0.5; depth:1;"
+                material="color:grey;"
+                position="0 -0.225 0"
+            ></a-entity>
+        </a-entity>
+    </a-entity>
+
+
+
+    </a-scene>
 </body>
-</html> 
+<script type="text/javascript">
+
+</script>
+</html>
