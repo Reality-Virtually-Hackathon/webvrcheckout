@@ -208,5 +208,17 @@ window.checkout = function() {
 }
 
 
+
+window.show_slide = function(slide_number){
+    // Hide all of the slides
+    let number_of_slides = 4;
+    for(let i = 1; i<=number_of_slides; i++){
+        document.getElementById("slide"+i).setAttribute('visible','false');
+    }
+    // Show the one slide
+    document.getElementById("slide"+slide_number).setAttribute('visible','true');
+}
+
+
 </script>
 </html>
