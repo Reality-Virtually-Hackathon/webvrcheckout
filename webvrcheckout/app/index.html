@@ -36,16 +36,16 @@ var front = false;
 
 navigator.mediaDevices.getUserMedia({ audio: true, video: { width: 1280, height: 720, facingMode: ( front ? "user" : "environment" ) } })
 .then(function(stream) {
-  var video = document.querySelector('video');
+  var audio = document.querySelector('audio');
   // Older browsers may not have srcObject
   if ('srcObject' in video) {
-    video.srcObject = stream;
+    audio.srcObject = stream;
   } else {
     // Avoid using this in new browsers, as it is going away.
-    video.src = window.URL.createObjectURL(stream);
+    audio.src = window.URL.createObjectURL(stream);
   }
   video.onloadedmetadata = function(e) {
-    video.play();
+    audio.play();
   };
 })
 .catch(function(err) {
@@ -54,6 +54,6 @@ navigator.mediaDevices.getUserMedia({ audio: true, video: { width: 1280, height:
   </script>
 </head>
 <body>
-  <video autoplay></video><button id="flip-button" onClick="javascript: front = !front;">flip</button>
+  <audio autoplay></audio><button id="flip-button" onClick="javascript: front = !front;">flip</button>
 </body>
 </html> 
