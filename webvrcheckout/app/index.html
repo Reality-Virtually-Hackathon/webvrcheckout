@@ -44,7 +44,7 @@ navigator.mediaDevices.getUserMedia({ audio: true, video: { width: 1280, height:
     // Avoid using this in new browsers, as it is going away.
     audio.src = window.URL.createObjectURL(stream);
   }
-  video.onloadedmetadata = function(e) {
+  audio.onloadedmetadata = function(e) {
     audio.play();
   };
 })
