@@ -15,3 +15,12 @@ $ gulp
 
 Local: http://localhost:3000
 UI: http://localhost:3001
+
+
+## Ressources
+Images from NASA
+Photos taken at the Coop MIT Store
+
+##A-Frame Components
+aframe-gui
+aframe-extras
