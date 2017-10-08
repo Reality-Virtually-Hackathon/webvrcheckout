@@ -39,6 +39,8 @@
         <a-assets>
             <img id="6dofThumbnail" src="assets/roomscale.png">
             <img id="3dofThumbnail" src="assets/equirectangular.jpg">
+            <img id="prod01" src="assets/product1.png">
+            <img id="prod06" src="assets/product6.png">
             <a-mixin id="grid" geometry="primitive:plane; width: 25; height: 25" rotation="-90 0 0" material="src:assets/grid.png; repeat:25 25"></a-mixin>
         </a-assets>
 
@@ -46,6 +48,73 @@
             position="4 1 5"
             rotation="0 40 0 "
         ></a-entity>
+
+
+        <a-entity
+            position="0 0 0"
+            rotation="0 50 0"
+            >
+            <a-gui-icon-button
+                height="0.75"
+                onclick="showProduct0001"
+                icon="ios-pricetags"
+                lookAt="[camera]" 
+                position="0 1.3 -3.5" 
+                scale="0.5 0.5 0.5"
+            ></a-gui-icon-button>
+            <a-plane
+                id="product0001"
+                position="0 1.6 -3"
+                lookAt="[camera]" 
+                height="2"
+                width="2"
+                material="src:#prod01; transparent:true"
+                visible="false"
+            >
+                <a-gui-icon-button
+                    height="0.75"
+                    onclick="addProduct0001"
+                    icon="ios-cart"
+                    lookAt="[camera]" 
+                    position="0 -1 0" 
+                    scale="0.5 0.5 0.5"
+                ></a-gui-icon-button>        
+            </a-plane>            
+        </a-entity>
+
+
+
+        <a-entity
+            position="0 0 0"
+            rotation="0 -55 0"
+            >
+            <a-gui-icon-button
+                height="0.75"
+                onclick="showProduct0006"
+                icon="ios-pricetags"
+                lookAt="[camera]" 
+                position="0 1.6 -3.5" 
+                scale="0.5 0.5 0.5"
+            ></a-gui-icon-button>
+            <a-plane
+                id="product0006"
+                position="0 1.6 -3"
+                lookAt="[camera]" 
+                height="2"
+                width="2"
+                material="src:#prod06; transparent:true"
+                visible="false"
+            >
+                <a-gui-icon-button
+                    height="0.75"
+                    onclick="addProduct0006"
+                    icon="ios-cart"
+                    lookAt="[camera]" 
+                    position="0 -1 0" 
+                    scale="0.5 0.5 0.5"
+                ></a-gui-icon-button>        
+            </a-plane>            
+        </a-entity>
 
         <!-- Grid -->
         <a-sky material="src:#3dofThumbnail; color:#fff"></a-sky>
@@ -56,7 +125,7 @@
             checkpoint-controls="mode: animate">
             <a-gui-cursor id="cursor"
                 raycaster="interval: 1000; objects: [gui-interactable], [link]"
-                fuse="true" fuseTimeout="2000"
+                fuse="false" fuseTimeout="2000"
                 design="dot"
             >
             </a-gui-cursor> <!-- /cursor -->
@@ -68,5 +137,27 @@
 </body>
 <script type="text/javascript">
     
+
+window.showProduct0001 = function() {
+    var product0001 = document.getElementById("product0001");
+    product0001.setAttribute('visible','true');
+}
+
+window.addProduct0001 = function() {
+    var product0001 = document.getElementById("product0001");
+    product0001.setAttribute('visible','false');
+}
+
+window.showProduct0006 = function() {
+    var product0006 = document.getElementById("product0006");
+    product0006.setAttribute('visible','true');
+}
+
+window.addProduct0006 = function() {
+    var product0006 = document.getElementById("product0006");
+    product0006.setAttribute('visible','false');
+}
+
+
 </script>
 </html>
