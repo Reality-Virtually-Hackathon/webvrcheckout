@@ -23,7 +23,7 @@
     <meta name="theme-color" content="#ffffff">
     <meta name="description" content="WebVR Checkout Demo">
     <meta name="apple-mobile-web-app-capable" />
-    <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.12.3/dist/aframe-extras.min.js"></script>
     <!--build:css css/styles.min.css-->
     <link rel="stylesheet" href="css/styles.css">
@@ -562,13 +562,17 @@
 
         <a-entity mixin="grid"></a-entity>
 
-        <a-entity camera="userHeight: 1.6" look-controls="" wasd-controls>
-			<a-entity cursor
+       <a-entity camera="userHeight: 1.6"
+            raycaster="objects: [product]"
+            universal-controls="movementControls: checkpoint"
+            look-controls="" 
+            wasd-controls
+            checkpoint-controls="mode: animate">
+        <a-entity cursor
             position="0 0 -1"
             geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;"
             material="color: #CCC; shader: flat;">
-			</a-gui-cursor> <!-- /cursor -->
-		</a-entity> <!-- /camera -->
+        </a-entity>
 
     </a-scene>
 </body>
