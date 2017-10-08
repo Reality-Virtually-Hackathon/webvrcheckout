@@ -218,12 +218,17 @@ AFRAME.registerComponent('checkout', {
         });
 
         //  adding ring
-        var icon = document.createElement("a-entity");
-        icon.setAttribute('geometry', `primitive: ring; radiusInner:0.15; radiusOuter:0.2;`);
-        icon.setAttribute('material', `shader: flat; side:front; color:white; opacity:0.75;`);
-        icon.setAttribute('rotation', `-90 0 0`);
+        var icon = document.createElement("a-gui-icon-button");
+        icon.setAttribute('height', `0.75`);
+        icon.setAttribute('onclick', `buttonActionFunction`);
+        icon.setAttribute('icon', `cash`);
         icon.setAttribute('position', `0 0.65 -0.65`);
+        icon.setAttribute('scale', `0.2 0.2 0.2`);
+        icon.setAttribute('rotation', `-70 0 0`);
         this.el.appendChild(icon);
+
+
+
 
         this.el.addEventListener('mouseenter', function(evt) {
             // var desc = evt.detail.intersection.object.el.getAttribute('desc');
@@ -255,6 +260,6 @@ AFRAME.registerComponent('checkout', {
         this.el.setAttribute("rotation", "0 " + radiansToDegrees(newRot.y) + " 0");
     }
 
-
-
 });
+
+
