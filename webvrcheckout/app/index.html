@@ -32,10 +32,8 @@ if (navigator.mediaDevices.getUserMedia === undefined) {
   }
 }
 
-var front = false;
-document.getElementById('flip-button').onclick = function() { front = !front; };
 
-navigator.mediaDevices.getUserMedia({ audio: true, video: { width: 1280, height: 720, facingMode: (front? "user" : "environment") } })
+navigator.mediaDevices.getUserMedia({ audio: true, video: { width: 1280, height: 720, facingMode: "environment" }})
 .then(function(stream) {
   var video = document.querySelector('video');
   // Older browsers may not have srcObject
@@ -55,6 +53,6 @@ navigator.mediaDevices.getUserMedia({ audio: true, video: { width: 1280, height:
   </script>
 </head>
 <body>
-  <video autoplay></video><button id="flip-button" value="flip"></button>
+  <video autoplay></video>
 </body>
 </html> 
