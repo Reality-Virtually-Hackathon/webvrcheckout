@@ -12,15 +12,8 @@
   var artyom = new Artyom();
 
 		
-artyom.on(['Good morning','Good afternoon']).then((i) => {
-    switch (i) {
-        case 0:
-            artyom.say("Good morning, how are you?");
-        break;
-        case 1:
-            artyom.say("Good afternoon, how are you?");
-        break;            
-    }
+artyom.on(['Good morning','Good afternoon','Good evening']).then((i) => {
+	artyom.say('Good ' + ( i ? 'morning' : 'afternoon' ) + ', how are you?');
 });
 
 artyom.initialize({
@@ -31,7 +24,7 @@ artyom.initialize({
     listen: true // Start to listen commands !
 
 }).then(() => {
-    artyom.say("Artyom has been succesfully initialized");
+    artyom.say("The voice command prompter has been succesfully initialized");
 }).catch((err) => {
     artyom.say("Artyom couldn't be initialized: " + err);
 });
