@@ -4,6 +4,13 @@ var radiansToDegrees = function(radians) {
     return radians * 180 / Math.PI;
 };
 
+// Converts from radians to degrees.
+var showcheckoutmenu = function() {
+    console.log("show menu");
+    var menu = document.getElementById('checkoutmenu');
+    menu.setAttribute('visible','true');
+};
+
 
 AFRAME.registerComponent('product', {
     schema: {
@@ -128,8 +135,6 @@ AFRAME.registerComponent('shopping', {
         var orientationVisible = false;
         var data = this.data;
         var _this = this;
-
-        _this.hide();
         //single camera
         this.cameraEl = cameraEl = document.querySelector('a-entity[camera]');
         if (!this.cameraEl) {
@@ -140,39 +145,17 @@ AFRAME.registerComponent('shopping', {
             if (evt.detail.name === 'rotation') {
                 if (this.object3D.getWorldRotation().x <= data.pitch) {
                     if (!orientationVisible) {
-                        _this.show();
                         orientationVisible = true;
                     }
                 } else {
                     if (orientationVisible) {
-                        _this.hide();
                         orientationVisible = false;
                     }
                 }
             }
         });
 
-        this.el.addEventListener('mouseenter', function(evt) {
-            // var desc = evt.detail.intersection.object.el.getAttribute('desc');
 
-            // if (desc) {
-            //     speak("You are facing " + desc);
-            // }
-
-        });
-
-        this.el.addEventListener('mouseleave', function() {
-            // silence();
-        });
-
-    },
-
-    show: function() {
-//        this.el.setAttribute('scale', '1 1 1');
-    },
-
-    hide: function() {
-//        this.el.setAttribute('scale', '0.03 0.03 0.03');
     },
 
     tick: function() {
@@ -220,29 +203,13 @@ AFRAME.registerComponent('checkout', {
         //  adding ring
         var icon = document.createElement("a-gui-icon-button");
         icon.setAttribute('height', `0.75`);
-        icon.setAttribute('onclick', `buttonActionFunction`);
+        icon.setAttribute('onclick', `showcheckoutmenu`);
         icon.setAttribute('icon', `cash`);
         icon.setAttribute('position', `0 0.65 -0.65`);
         icon.setAttribute('scale', `0.2 0.2 0.2`);
         icon.setAttribute('rotation', `-70 0 0`);
         this.el.appendChild(icon);
-
-
-
-
-        this.el.addEventListener('mouseenter', function(evt) {
-            // var desc = evt.detail.intersection.object.el.getAttribute('desc');
-
-            // if (desc) {
-            //     speak("You are facing " + desc);
-            // }
-
-        });
-
-        this.el.addEventListener('mouseleave', function() {
-            // silence();
-        });
-
+        this.icon = icon;
     },
 
     show: function() {
@@ -263,3 +230,69 @@ AFRAME.registerComponent('checkout', {
 });
 
 
+AFRAME.registerComponent('checkoutmenu', {
+    init: function() {
+        var newPos = this.newPos = new THREE.Vector3();
+        var data = this.data;
+        var _this = this;
+
+        //single camera
+        this.cameraEl = cameraEl = document.querySelector('a-entity[camera]');
+        if (!this.cameraEl) {
+            this.cameraEl = document.querySelector('a-camera');
+        
+            this.yaxis = new THREE.Vector3(0, 1, 0);
+            this.zaxis = new THREE.Vector3(0, 0, 1);
+
+            this.pivot = new THREE.Object3D();
+            this.el.object3D.position.set(this.data.xoffset, '1.6', '-1');
+
+            this.el.sceneEl.object3D.add(this.pivot);
+            this.pivot.add(this.el.object3D);
+        };
+    },
+    eventHandler: function(evt) {
+
+        if (this.el.getAttribute('visible') === false) {
+
+            var direction = this.zaxis.clone();
+            direction.applyQuaternion(this.cameraEl.object3D.quaternion);
+            var ycomponent = this.yaxis.clone().multiplyScalar(direction.dot(this.yaxis));
+            direction.sub(ycomponent);
+            direction.normalize();
+
+            this.pivot.quaternion.setFromUnitVectors(this.zaxis, direction);
+
+            var xposition = this.cameraEl.object3D.getWorldPosition().x;
+            var yposition = (Math.round(this.cameraEl.object3D.getWorldPosition().y * 100) / 100);
+            var zposition = this.cameraEl.object3D.getWorldPosition().z;
+
+            if(this.initHeight === yposition && this.initHeight !== 0){
+                yposition = 0
+            }else{
+                yposition = yposition - this.initHeight;
+            }
+
+            this.pivot.position.set(xposition, yposition, zposition);
+
+            this.el.setAttribute('scale', '1 1 1');             
+            this.el.setAttribute('visible', true);
+
+
+        } else if (this.el.getAttribute('visible') === true) {
+
+            this.el.setAttribute('scale', '0.00001 0.00001 0.00001');
+            this.el.setAttribute('visible', false);
+        }
+
+    },
+
+    show: function() {
+//        this.el.setAttribute('scale', '1 1 1');
+    },
+
+    hide: function() {
+//        this.el.setAttribute('scale', '0.03 0.03 0.03');
+    }
+
+});

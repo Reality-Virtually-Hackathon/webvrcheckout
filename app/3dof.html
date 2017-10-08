@@ -39,8 +39,15 @@
         <a-assets>
             <img id="6dofThumbnail" src="assets/roomscale.png">
             <img id="3dofThumbnail" src="assets/equirectangular.jpg">
+            
             <img id="prod01" src="assets/product1.png">
             <img id="prod06" src="assets/product6.png">
+
+            <img id="cart1" src="assets/cart1.png">
+            <img id="cart2" src="assets/cart2.png">
+            <img id="cart3" src="assets/cart3.png">
+            <img id="cart4" src="assets/cart4.png">
+
             <a-mixin id="grid" geometry="primitive:plane; width: 25; height: 25" rotation="-90 0 0" material="src:assets/grid.png; repeat:25 25"></a-mixin>
         </a-assets>
 
@@ -133,6 +140,43 @@
 
         <a-entity checkout="pitch: -0.7;"></a-entity>
 
+        <a-entity checkoutmenu id="checkoutmenu" visible="false"
+        >
+            <a-plane id="slide1"
+                visible="true"
+                position="0 1.5 -1.25"
+                height="0.5"
+                width="1"
+                color="white"
+                material="src:#cart1;"
+            ></a-plane> 
+            <a-plane id="slide2"
+                visible="false"
+                position="0 1.5 -1.25"
+                height="0.5"
+                width="1"
+                color="white"
+                material="src:#cart2;"
+            ></a-plane> 
+            <a-plane id="slide3"
+                visible="false"
+                position="0 1.5 -1.25"
+                height="0.5"
+                width="1"
+                color="white"
+                material="src:#cart3;"
+            ></a-plane> 
+            <a-plane id="slide4"
+                visible="false"
+                position="0 1.5 -1.25"
+                height="0.5"
+                width="1"
+                color="white"
+                material="src:#cart4;"
+            ></a-plane> 
+
+        </a-entity>
+
     </a-scene>
 </body>
 <script type="text/javascript">
@@ -156,6 +200,11 @@ window.showProduct0006 = function() {
 window.addProduct0006 = function() {
     var product0006 = document.getElementById("product0006");
     product0006.setAttribute('visible','false');
+}
+
+window.checkout = function() {
+    var menu = document.getElementById("checkoutMenu");
+    menu.setAttribute('visible','true');
 }
 
 
