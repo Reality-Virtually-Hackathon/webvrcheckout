@@ -41,6 +41,13 @@
             <img id="teamThumbnail" src="assets/team.jpg">
             <img id="3dofThumbnail" src="assets/equirectangular.jpg">
             <a-mixin id="grid" geometry="primitive:plane; width: 25; height: 25" rotation="-90 0 0" material="src:assets/grid.png; repeat:25 25; transparent:true;" ></a-mixin>
+
+
+            <img id="cart1" src="assets/cart1.png">
+            <img id="cart2" src="assets/cart2.png">
+            <img id="cart3" src="assets/cart3.png">
+            <img id="cart4" src="assets/cart4.png">
+
         </a-assets>
 
         <a-entity link="href: team.html; title: Hackerthon Team; image: #teamThumbnail"
@@ -234,25 +241,42 @@
 
     <a-entity checkout="pitch: -0.7;"></a-entity>
 
-    <a-entity checkoutmenu id="checkoutmenu" visible="true">
-        <a-plane
-            position="0 1 -1.5"
-            height="1"
+    <a-entity checkoutmenu id="checkoutmenu" visible="false"
+    >
+        <a-plane id="slide1"
+            visible="true"
+            position="0 1.5 -1.25"
+            height="0.5"
             width="1"
-            color="red"
-        >
-            <a-gui-icon-button
-                height="0.75"
-                onclick="next"
-                icon="ios-cart"
-                lookAt="[camera]" 
-                position="1 0 0" 
-                scale="0.5 0.5 0.5"
-            ></a-gui-icon-button>        
-        </a-plane> 
+            color="white"
+            material="src:#cart1;"
+        ></a-plane> 
+        <a-plane id="slide2"
+            visible="false"
+            position="0 1.5 -1.25"
+            height="0.5"
+            width="1"
+            color="white"
+            material="src:#cart2;"
+        ></a-plane> 
+        <a-plane id="slide3"
+            visible="false"
+            position="0 1.5 -1.25"
+            height="0.5"
+            width="1"
+            color="white"
+            material="src:#cart3;"
+        ></a-plane> 
+        <a-plane id="slide4"
+            visible="false"
+            position="0 1.5 -1.25"
+            height="0.5"
+            width="1"
+            color="white"
+            material="src:#cart4;"
+        ></a-plane> 
+
     </a-entity>
-
-
 
 
     <a-entity shopping id="cart"
@@ -323,6 +347,20 @@
 <script type="text/javascript">
 
 
+let current_slide_number = 0;
+let number_of_slides = 4;
+window.increment_slide = function(){
+    current_slide_number = (current_slide_number + 1) % number_of_slides;
+    window.show_slide(current_slide_number);
+}
+window.show_slide = function(slide_number){
+    // Hide all of the slides
+    for(let i = 1; i<=number_of_slides; i++){
+        document.getElementById("slide"+i).setAttribute('visible','false');
+    }
+    // Show the one slide
+    document.getElementById("slide"+slide_number).setAttribute('visible','true');
+}
 
 </script>
 </html>

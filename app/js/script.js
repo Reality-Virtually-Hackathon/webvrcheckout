@@ -4,7 +4,6 @@ var radiansToDegrees = function(radians) {
     return radians * 180 / Math.PI;
 };
 
-// Converts from radians to degrees.
 var showcheckoutmenu = function() {
     console.log("show menu");
     var menu = document.getElementById('checkoutmenu');
@@ -235,6 +234,17 @@ AFRAME.registerComponent('checkoutmenu', {
         var newPos = this.newPos = new THREE.Vector3();
         var data = this.data;
         var _this = this;
+
+        //  adding ring
+        var icon = document.createElement("a-gui-icon-button");
+        icon.setAttribute('height', `0.75`);
+        icon.setAttribute('onclick', `increment_slide`);
+        icon.setAttribute('icon', `arrow-right-b`);
+        icon.setAttribute('position', `0 1.15 -1.15`);
+        icon.setAttribute('scale', `0.2 0.2 0.2`);
+        icon.setAttribute('rotation', `0 0 0`);
+        this.el.appendChild(icon);
+        this.icon = icon;
 
         //single camera
         this.cameraEl = cameraEl = document.querySelector('a-entity[camera]');
