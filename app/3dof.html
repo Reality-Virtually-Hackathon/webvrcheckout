@@ -211,7 +211,7 @@ let current_slide_number = 0;
 let number_of_slides = 4;
 window.increment_slide = function(){
     current_slide_number = (current_slide_number + 1) % number_of_slides;
-    window.show_slide(current_slide_number);
+    window.show_slide(current_slide_number+1);
 }
 window.show_slide = function(slide_number){
     // Hide all of the slides
