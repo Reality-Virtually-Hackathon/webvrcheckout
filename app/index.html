@@ -29,18 +29,18 @@
     <link rel="stylesheet" href="css/styles.css">
     <!-- endbuild -->
     <!--build:js js/main.min.js -->
+    <script src="js/aframe-gui.js"></script>
     <script src="js/script.js"></script>
     <!-- endbuild -->
 </head>
 
 <body>
-    <a-scene physics="debug:false; friction: 0.1; restitution: 0.75">
+    <a-scene>
         <a-assets>
             <img id="teamThumbnail" src="assets/team.jpg">
             <img id="3dofThumbnail" src="assets/equirectangular.jpg">
             <a-mixin id="grid" geometry="primitive:plane; width: 25; height: 25" rotation="-90 0 0" material="src:assets/grid.png; repeat:25 25"></a-mixin>
         </a-assets>
-
 
         <a-entity link="href: team.html; title: Hackerthon Team; image: #teamThumbnail"
             position="-5 1 -1"
@@ -86,461 +86,461 @@
         </a-entity>
 
         <!-- Items -->
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:blue;"
             position="1.65 1.35 -1.75"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:blue;"
             position="1.65 1.35 -2.25"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:blue;"
             position="1.65 1.35 -2.75"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:blue;"
             position="1.65 1.35 -3.25"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:blue;"
             position="1.65 1.35 -3.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:blue;"
             position="1.65 1.35 -4.25"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:blue;"
             position="1.65 1.35 -4.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:blue;"
             position="1.65 1.35 -5.25"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:blue;"
             position="1.65 1.35 -5.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:blue;"
             position="1.65 1.35 -6.25"
         ></a-entity>
 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:red;"
             position="1.65 0.85 -1.75"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:red;"
             position="1.65 0.85 -2.25"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:red;"
             position="1.65 0.85 -2.75"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:red;"
             position="1.65 0.85 -3.25"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:red;"
             position="1.65 0.85 -3.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:red;"
             position="1.65 0.85 -4.25"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:red;"
             position="1.65 0.85 -4.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:red;"
             position="1.65 0.85 -5.25"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:red;"
             position="1.65 0.85 -5.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:red;"
             position="1.65 0.85 -6.25"
         ></a-entity>
 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:blue;"
             position="2.35 1.35 -1.75"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:blue;"
             position="2.35 1.35 -2.25"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:blue;"
             position="2.35 1.35 -2.75"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:blue;"
             position="2.35 1.35 -3.25"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:blue;"
             position="2.35 1.35 -3.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:blue;"
             position="2.35 1.35 -4.25"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:blue;"
             position="2.35 1.35 -4.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:blue;"
             position="2.35 1.35 -5.25"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:blue;"
             position="2.35 1.35 -5.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:blue;"
             position="2.35 1.35 -6.25"
         ></a-entity>
 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:red;"
             position="2.35 0.85 -1.75"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:red;"
             position="2.35 0.85 -2.25"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:red;"
             position="2.35 0.85 -2.75"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:red;"
             position="2.35 0.85 -3.25"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:red;"
             position="2.35 0.85 -3.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:red;"
             position="2.35 0.85 -4.25"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:red;"
             position="2.35 0.85 -4.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:red;"
             position="2.35 0.85 -5.25"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:red;"
             position="2.35 0.85 -5.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:red;"
             position="2.35 0.85 -6.25"
         ></a-entity>
 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-1.65 1.35 -1.75"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-1.65 1.35 -2.25"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-1.65 1.35 -2.75"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-1.65 1.35 -3.25"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-1.65 1.35 -3.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-1.65 1.35 -4.25"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-1.65 1.35 -4.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-1.65 1.35 -5.25"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-1.65 1.35 -5.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-1.65 1.35 -6.25"
         ></a-entity>
 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:purple;"
             position="-1.65 0.85 -1.75"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:purple;"
             position="-1.65 0.85 -2.25"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:purple;"
             position="-1.65 0.85 -2.75"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:purple;"
             position="-1.65 0.85 -3.25"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:purple;"
             position="-1.65 0.85 -3.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:purple;"
             position="-1.65 0.85 -4.25"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:purple;"
             position="-1.65 0.85 -4.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:purple;"
             position="-1.65 0.85 -5.25"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:purple;"
             position="-1.65 0.85 -5.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:purple;"
             position="-1.65 0.85 -6.25"
         ></a-entity>
 
 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-1.65 1.35 -1.75"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-1.65 1.35 -2.25"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-1.65 1.35 -2.75"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-1.65 1.35 -3.25"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-1.65 1.35 -3.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-1.65 1.35 -4.25"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-1.65 1.35 -4.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-1.65 1.35 -5.25"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-1.65 1.35 -5.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-1.65 1.35 -6.25"
         ></a-entity>
 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:purple;"
             position="-2.35 0.85 -1.75"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:purple;"
             position="-2.35 0.85 -2.25"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:purple;"
             position="-2.35 0.85 -2.75"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:purple;"
             position="-2.35 0.85 -3.25"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:purple;"
             position="-2.35 0.85 -3.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:purple;"
             position="-2.35 0.85 -4.25"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:purple;"
             position="-2.35 0.85 -4.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:purple;"
             position="-2.35 0.85 -5.25"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:purple;"
             position="-2.35 0.85 -5.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:sphere; radius:0.17;"
             material="color:purple;"
             position="-2.35 0.85 -6.25"
         ></a-entity>
 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-2.35 1.35 -1.75"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-2.35 1.35 -2.25"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-2.35 1.35 -2.75"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-2.35 1.35 -3.25"
         ></a-entity> 
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-2.35 1.35 -3.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-2.35 1.35 -4.25"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-2.35 1.35 -4.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-2.35 1.35 -5.25"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-2.35 1.35 -5.75"
         ></a-entity>
-        <a-entity product="rating:****; latestReview:great product;"
+        <a-entity gui-interactable="clickAction:test" gui-item="" product="rating:4.5; latestReview:great product;"
             geometry="primitive:box; height:0.2; width:0.2; depth:0.2;"
             material="color:yellow;"
             position="-2.35 1.35 -6.25"
@@ -562,24 +562,101 @@
 
         <a-entity mixin="grid"></a-entity>
 
+        <a-box position="0 0 -3" color="blue"></a-box>
+
+
+        <!-- Camera + cursor. -->
         <a-entity camera="userHeight: 1.6"
-            raycaster="objects: [product]"
             universal-controls="movementControls: checkpoint"
             checkpoint-controls="mode: animate">
-        <a-entity cursor
-            position="0 0 -1"
-            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;"
-            material="color: #CCC; shader: flat;">
-        </a-entity>
+            <a-gui-cursor id="cursor"
+                raycaster="interval: 1000; objects: [gui-interactable], [checkpoint], [link]"
+                fuse="true" fuseTimeout="2000"
+                design="dot"
+            >
+            </a-gui-cursor> <!-- /cursor -->
+        </a-entity> <!-- /camera -->
+     
 
-      </a-entity>
+    <a-entity id="cart"
+        position="0 0 0"
+        >
+        <a-entity position="0 0.25 -0.75">
+            <a-entity position="-0.25 0 0.5"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity>            
+            <a-entity position="-0.25 0 0.25"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity>            
+            <a-entity position="-0.25 0 0"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity>            
+            <a-entity position="-0.25 0 -0.25"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity>            
+            <a-entity position="-0.25 0 -0.5"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity>            
+            <a-entity position="0.25 0 0.5"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity>            
+            <a-entity position="0.25 0 0.25"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity>            
+            <a-entity position="0.25 0 0"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity>            
+            <a-entity position="0.25 0 -0.25"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity>            
+            <a-entity position="0.25 0 -0.5"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity> 
+            <a-entity position="0.1 0 -0.5"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity> 
+            <a-entity position="-0.1 0 -0.5"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity> 
+            <a-entity position="0.1 0 0.5"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity> 
+            <a-entity position="-0.1 0 0.5"
+                geometry="primitive:cylinder; height:0.5; radius:0.01;" material="color:grey;"
+            ></a-entity> 
+            <a-entity
+                geometry="primitive:box; height:0.02; width:0.02; depth:1;"
+                material="color:grey;"
+                position="0.25 0.25 0"
+            ></a-entity>
+            <a-entity
+                geometry="primitive:box; height:0.02; width:0.02; depth:1;"
+                material="color:grey;"
+                position="-0.25 0.25 0"
+            ></a-entity>
+            <a-entity
+                geometry="primitive:box; height:0.02; width:0.525; depth:0.02;"
+                material="color:grey;"
+                position="0 0.25 0.5"
+            ></a-entity>
+            <a-entity
+                geometry="primitive:box; height:0.02; width:0.525; depth:0.02;"
+                material="color:grey;"
+                position="0 0.25 -0.5"
+            ></a-entity>
+            <a-entity
+                geometry="primitive:box; height:0.02; width:0.5; depth:1;"
+                material="color:grey;"
+                position="0 -0.225 0"
+            ></a-entity>
+        </a-entity>
+    </a-entity>
+
+
 
     </a-scene>
 </body>
 <script type="text/javascript">
-    
-window.hello = function() {
-    console.log("clicked entity");
-}
+
 </script>
 </html>

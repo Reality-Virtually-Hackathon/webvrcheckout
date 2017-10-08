@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <!-- endbuild -->
     <!--build:js js/main.min.js -->
+    <script src="js/aframe-gui.js"></script>
     <script src="js/script.js"></script>
     <!-- endbuild -->
 </head>
@@ -51,17 +52,17 @@
         <a-sky material="src:#3dofThumbnail; color:#fff"></a-sky>
 
 
+        <!-- Camera + cursor. -->
         <a-entity camera="userHeight: 1.6"
-            raycaster="objects: [product]"
             universal-controls="movementControls: checkpoint"
             checkpoint-controls="mode: animate">
-        <a-entity cursor
-            position="0 0 -1"
-            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;"
-            material="color: #CCC; shader: flat;">
-        </a-entity>
-
-      </a-entity>
+            <a-gui-cursor id="cursor"
+                raycaster="interval: 1000; objects: [gui-interactable], [link]"
+                fuse="true" fuseTimeout="2000"
+                design="dot"
+            >
+            </a-gui-cursor> <!-- /cursor -->
+        </a-entity> <!-- /camera -->
 
     </a-scene>
 </body>
